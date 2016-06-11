@@ -256,21 +256,11 @@
 <script src="Scripts/waveside.js"></script>
 <script>
   var elementOffset = $('#waveNav').offset().top;
-console.log("This is the offset"+elementOffset);
 var dest = elementOffset;
-console.log("This is dest"+dest);
-var srotate = "translate(0,-"+elementOffset+"px)";
-//$(window).scroll(function (event) {
- $('#waveNav').hasClass('.affix').css('transform', 'translateY(-' + dest + 'px)');
-	console.log("Did this work 1");
+ $('#waveNav.affix').css('transform', 'translateY(-' + dest + 'px)');
 	$('#waveNav.affix').css('-webkit-transform', 'translateY(-'+ dest +'px)');
-	console.log("Did this work 2");
 	$('#waveNav.affix').css('-ms-transform', 'translateY('-+ dest +'px)');
-	console.log("Did this work 3");
 	$('#waveNav.affix').css('-moz-transform', 'translateY('-+ dest +'px)');
-	console.log("4");
 	$('#waveNav.affix').css('-o-transform', 'translateY('-+ dest +'px)');
-	console.log("Did this work 5");
-//});
 </script>
 </html>
