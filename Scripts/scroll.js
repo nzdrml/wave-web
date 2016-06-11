@@ -87,6 +87,10 @@ $('#d2').click(d2);
 
 $('#d3').click(d3);
 
+$('#l1').click(d1); 
+$('#l2').click(d2); 
+$('#l3').click(d3); 
+
 var interval = setInterval(function(){
 	if($('#d1').css("opacity") == 1){
 		d2();
@@ -104,3 +108,25 @@ var interval = setInterval(function(){
 		d1();
 	};
 	},15000);
+	
+	
+var wave=new google.maps.LatLng(14.559918, 121.019780);
+
+function initialize()
+{
+var mapProp = {
+  center:wave,
+  zoom:18,
+  mapTypeId:google.maps.MapTypeId.ROADMAP
+  };
+
+var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+var marker=new google.maps.Marker({
+  position:wave,
+  });
+
+marker.setMap(map);
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);

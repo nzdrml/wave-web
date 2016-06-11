@@ -36,6 +36,9 @@ html, body{
 
 @media(max-width:767px){
 	
+	#minlogo{
+		display:none;}
+	
 	#waveLogo{
 		width:200px;
 		height:138px;
@@ -68,13 +71,13 @@ html, body{
 }
 
 .text-vcenter{
- 	text-align: center;
-  	vertical-align: middle;
-  	display: inline;
-    top: 50%;
-    position: relative;
-	margin-left: auto;
-	margin-right:auto;
+ 	margin: 0;
+   position: absolute;               /* 2 */
+   top: 50%;                         /* 3 */
+   transform: translate(0, -50%);
+   right:20%;
+   left:20%;
+   text-align:center;
 	
 
 }
@@ -138,6 +141,17 @@ html, body{
 	position: relative;
 }
 
+#side.pull-left.navbar-toggle{
+	float:left;
+	width:100%;
+	
+
+}
+
+.navbar-toggle .icon-bar{
+	background:#FFF;
+}
+
 .navbar.transparent.navbar-inverse .navbar-inner {
 	
     border-width: 0px;
@@ -179,6 +193,26 @@ html, body{
 
 .nav.navbar-nav.navbar-right > li > a.selectedClass {
     color: #8ccdf9;
+}
+
+@media (max-width: 768px) {
+	.navmenu-default, .navbar-default .navbar-offcanvas{
+	background:#000;
+	}
+	
+	#side{
+		float:left !important;
+	}
+	
+    .navbar .navbar-nav .navbar-right{
+        display: inline-block;
+        float: none;
+        vertical-align: top;
+    }
+
+    .navbar .navbar-collapse .navbar-right {
+        text-align: center;
+    }
 }
 
 
@@ -319,6 +353,15 @@ width:100%;
 #benst{
 	text-align:center;
 	width:70%;
+	display: table;
+}
+
+#tr{
+	display: table-row;
+}
+
+#td{
+	display: table-cell;
 }
 
 #benst h3{
@@ -332,6 +375,15 @@ width:100%;
 }
 
 @media(max-width:767px){
+	#ContactContainer{
+		margin: 0;
+   position: absolute;               /* 2 */
+   top: 50%;                         /* 3 */
+   transform: translate(0, -50%);
+   right:5%;
+   left:5%;
+	}
+	
 	#contact h1{
 	font: 24px quicksand;
 	text-align:center;
@@ -361,6 +413,15 @@ width:100%;
 	
 }
 @media(min-width:768px){
+	#ContactContainer{
+		margin: 0;
+   position: absolute;               /* 2 */
+   top: 50%;                         /* 3 */
+   transform: translate(0, -50%);
+   right:20%;
+   left:15%;
+	}
+	
 	#contact h1{
 	font: 36px quicksand;
 	}
@@ -387,6 +448,15 @@ width:100%;
 
 }
 @media(min-width:992px){
+	#ContactContainer{
+		margin: 0;
+   position: absolute;               /* 2 */
+   top: 50%;                         /* 3 */
+   transform: translate(0, -50%);
+   right:20%;
+   left:15%;
+	}
+	
 	#contact h1{
 	font: 48px quicksand;
 	text-align:left;
@@ -413,6 +483,8 @@ width:100%;
 	float:right;}
 }
 
+
+
 #contact{
 	background: #e5e8e9;
 	min-height: 100%;
@@ -420,6 +492,7 @@ width:100%;
 	-moz-background-size: cover;
   -o-background-size: cover;
   	background-size: cover;
+	position:relative;
 }
 
 #contact h1{
@@ -479,7 +552,7 @@ width:100%;
 }
 
 #waveNav.affix{
-	top:0px;
+	
 	background-color: rgb(0, 0, 0);
     /* RGBa with 0.6 opacity */
     background-color: rgba(0, 0, 0, 0.6);
@@ -488,11 +561,16 @@ width:100%;
     /* For IE 8*/
     -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
 	height:40px;
+	
+	
+	
 	-webkit-transition: all 1s ease-out;
 	-moz-transition: all 1s ease-out;
 	-ms-transition: all 1s ease-out;
 	-o-transition: all 1s ease-out;
 	transition: all 1s ease-out;
+	
+	
 }
 
 #minlogo{
@@ -518,6 +596,7 @@ transition: all 1s ease-out;
   	-o-background-size: cover;
  	background-size: cover;
   	text-align:center;
+	position:relative;
 }
 
 #hContainer{
@@ -584,7 +663,16 @@ transition: all 1s ease-out;
 
 #HBar{
 	position:absolute;
+	top:85px;
 }
+
+#l1.blue:hover,#l2.blue:hover,#l3.blue:hover{
+	 background-color: rgba(65, 67, 69, 1);
+}
+#l1.grey:hover,#l2.grey:hover,#l3.grey:hover{
+	 background-color: rgba(140, 206, 249,1);
+}
+
 
 .blue { background-color: rgba(140, 206, 249,1); }
 .dividerBlue{
@@ -605,6 +693,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#414345', end
 }
 
 @media(max-width:767px){
+	#hContainer{
+		margin: 0;
+   position: absolute;               /* 2 */
+   top: 50%;                         /* 3 */
+   transform: translate(0, -50%);
+   right:20%;
+   left:20%;} 
+	
 	#hContainer h1{
 	font: 24px quicksand;
 	color:#FFF;
@@ -612,6 +708,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#414345', end
 	#i1 img{
 		max-width:100px;
 	}
+	
+	
+	#HDesc p{
+	font-size:12px;}
+
 	
 	#hIcons{
 	text-align:center;
@@ -632,6 +733,16 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#414345', end
 
 
 @media(min-width:768px){
+	
+	#hContainer{
+		margin: 0;
+   position: absolute;               /* 2 */
+   top: 50%;                         /* 3 */
+   transform: translate(0, -50%);
+   right:20%;
+   left:20%;} 
+   
+   
 	#hContainer h1{
 	font: 36px quicksand;
 	color:#FFF;
@@ -642,6 +753,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#414345', end
 	position:relative;
 	float:right;
 	}
+	
+	#HDesc p{
+	font-size:14px;}
 	
 	#hIcons{
 	float:left;
@@ -655,6 +769,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#414345', end
 }
 
 @media(min-width:992px){
+	#hContainer{
+		margin: 0;
+   position: absolute;               /* 2 */
+   top: 50%;                         /* 3 */
+   transform: translate(0, -50%);
+   right:20%;
+   left:20%;} 
+	
 	#hContainer h1{
 	font: 48px quicksand;
 	color:#FFF;
@@ -666,9 +788,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#414345', end
 	
 	
 	#HDesc{
-	width:30%;
+	width:35%;
 	position:relative;
 	float:right;
+	}
+	
+	#HDesc p{
+	font-size:14px;
+	line-height:15px;
 	}
 	
 	#hIcons{
@@ -707,4 +834,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#414345', end
 	height:50px;
 	width:100%;
 }
+}
+
+#googleMap {
+    -webkit-font-smoothing: subpixel-antialiased !important;
 }
