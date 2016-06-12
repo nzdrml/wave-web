@@ -144,6 +144,7 @@ html, body{
 #side.pull-left.navbar-toggle{
 	float:left;
 	width:100%;
+	text-align:right;
 
 
 }
@@ -228,6 +229,9 @@ html, body{
 }
 
 #waveNav{
+	width:100%;
+	position:absolute;
+	bottom:0;
 	font: 12px quicksand;
 	text-transform:uppercase;
 	font-weight:bold;
@@ -265,7 +269,7 @@ width:100%;
 
 #Benefits{
 	background: url(../img/bg2.png) no-repeat center center fixed;
-	height: 100%;
+	min-height: 100%;
 	position:relative;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
@@ -552,7 +556,9 @@ width:100%;
 }
 
 #waveNav.affix{
-
+	z-index:3;
+	top:0;
+	position:fixed;
 	background-color: rgb(0, 0, 0);
     /* RGBa with 0.6 opacity */
     background-color: rgba(0, 0, 0, 0.6);

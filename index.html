@@ -28,22 +28,16 @@
                     </div>
                     <!--Text Center!-->
                 </div>
-
-            </header>
-            <!--Container!--><!--Home--!-->
-
-            <nav class="navbar transparent navbar-inner navbar-fixed-bottom" id="waveNav" data-spy="affix"
-                 data-offset-top="500">
+<nav class="navbar transparent navbar-inner" id="waveNav" data-spy="affix" >
                 <div class="container-fluid">
                     <div class="navbar-header">
                         <div>
-                            <button type="button" class="pull-left navbar-toggle" id="side" data-toggle="offcanvas"
-                                    data-target="#nv" data-canvas="body"><span
+                            <button type="button" class="pull-left navbar-toggle" id="side" data-toggle="offcanvas" data-target="#nv" data-canvas="body"><span
                                     class="sr-only">Toggle navigation</span> <span
                                     class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
                             </button>
                         </div>
-                        <a class="navbar-brand" id="minlogo" data-spy="affix" data-offset-top="500" href="#Home"><img
+                        <a class="navbar-brand" id="minlogo" data-spy="affix" href="#Home"><img
                                 src="img/logo2.png"/></a></div>
                     <!--Navbar Brand!-->
                     <div id="nv" class="collapse navbar-collapse">
@@ -60,6 +54,10 @@
                 <!--Container!-->
             </nav>
             <!--NavBar!-->
+            </header>
+            <!--Container!--><!--Home--!-->
+
+            
 
             <div id="about">
                 <div id="carousel">
@@ -150,6 +148,7 @@
                         <!--Bens!-->
                     </div>
                     <!--Container?!-->
+                    <div id="filler"></div>
                 </div>
                 <!--Benefits!-->
             </div>
@@ -259,7 +258,7 @@
                 <!--Container!-->
             </div>
             <!--Contact!-->
-            <div class="affixThis"></div>
+            
         </div>
         <!--Wrap!-->
         <script src='https://maps.googleapis.com/maps/api/js?v=3.exp'></script>
@@ -268,14 +267,6 @@
         <script src="js/scroll.js"></script>
         <script src="js/jasny-bootstrap.min.js"></script>
         <script src="js/waveside.js"></script>
-        <script>
-            var elementOffset = $('#waveNav').offset().top;
-            var dest = elementOffset;
-            $('#waveNav.affix').css('transform', 'translateY(-' + dest + 'px)');
-            $('#waveNav.affix').css('-webkit-transform', 'translateY(-' + dest + 'px)');
-            $('#waveNav.affix').css('-ms-transform', 'translateY(' - +dest + 'px)');
-            $('#waveNav.affix').css('-moz-transform', 'translateY(' - +dest + 'px)');
-            $('#waveNav.affix').css('-o-transform', 'translateY(' - +dest + 'px)');
-        </script>
+        
     </body>
 </html>

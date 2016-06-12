@@ -23,3 +23,10 @@ $(window).resize(function(){
 		$('#nv').addClass('collapse navbar-collapse');
 	}
 });
+
+var elementOffset = $('#waveNav').offset().top;
+
+		var dest = elementOffset;
+
+$('#waveNav').affix({offset: dest });
+$('#minlogo').affix({offset: dest });
