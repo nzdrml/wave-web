@@ -360,11 +360,11 @@ width:100%;
 	display: table;
 }
 
-#tr{
+.tr{
 	display: table-row;
 }
 
-#td{
+.td{
 	display: table-cell;
 }
 

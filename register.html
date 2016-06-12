@@ -16,22 +16,24 @@
     <div id="Main">
         <div id="Box">
             <div id="box-container">
-                <div id="box-container">
+                <div id="box-container2">
                     <a href="index.html">
                         <div id="logo"></div>
                     </a>
                     <div ng-app>
                         <form name="Register">
-                            <p><input type="text" id="name" name="fname" ng-model="fName" placeholder="First Name">
-                                <input type="text" id="name" name="lName" ng-model="lName" placeholder="Last Name"></p>
-                            <p><input type="email" name="email" ng-model="email" placeholder="E-mail" required>
-                            <p><input type="text" name="pnumber" ng-model="pnumber" placeholder="Mobile Phone Number">
-                            </p>
+                            <p><input type="text" id="name" name="fName" ng-model="fName" placeholder="First Name" ng-class="{highlight:Register.fName.$error.required && Register.fName.$touched}" required>
+                                <input type="text" id="name" name="lName" ng-model="lName" placeholder="Last Name" ng-class="{highlight:Register.lName.$error.required && Register.lName.$touched}" required></p>
+                            <p><input type="email" name="email" ng-model="email" placeholder="E-mail" required ng-class="{highlight:Register.email.$error.required && Register.email.$touched || Register.email.$error.email}" required>
+                            <p><input type="text" name="pnumber" ng-model="pnumber" placeholder="Mobile Phone Number" ng-class="{highlight:Register.pnumber.$error.required && Register.pnumber.$touched || (Register.pnumber.$error.pattern || Register.pnumber.$error.minlength || Register.pnumber.$error.maxlength)}" ng-minlength="11" ng-maxlength="11" ng-pattern="\(?([0-9]{4})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/" required></p>
+                            <span ng-show="Register.pnumber.$error.pattern" class="err">
+            <p>Valid phone number required</p></span>
+                            
                             <p><input type="password" name="password" ng-model="password" placeholder="Password"
                                       ng-required></p>
                             <p><input type="password" name="password2" ng-model="password2"
                                       placeholder="Confirm Password" ng-required></p>
-                            <p><input type="text" name="COS" ng-model="COS" placeholder="Company/Organization/School">
+                            <p><input type="text" name="COS" ng-model="COS" placeholder="Company/Organization/School" required>
                             </p>
                             <p><input type="text" name="PartnerNum" ng-model="PartnerNum"
                                       placeholder="Corporate Partner Code"></p>

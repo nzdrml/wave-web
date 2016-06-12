@@ -160,6 +160,7 @@ button{
 	color:#8CCEF9;
 }
 
-input:invalid {
-    border: 1px solid red;
+
+.highlight{
+	border: 1px solid red;
 }
