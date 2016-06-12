@@ -3,24 +3,24 @@
 
 @font-face{
 	font-family: quicksand;
-	src:url(../Fonts/quicksand/Quicksand_Book.otf);
+	src:url(../fonts/quicksand/Quicksand_Book.otf);
 }
 
 @font-face{
 	font-family: quicksand;
-	src:url(../Fonts/quicksand/Quicksand_Bold.otf);
+	src:url(../fonts/quicksand/Quicksand_Bold.otf);
 	font-weight: bold;
 }
 
 @font-face{
 	font-family: quicksand;
-	src:url(../Fonts/quicksand/Quicksand_Light.otf);
+	src:url(../fonts/quicksand/Quicksand_Light.otf);
 	font-weight: 100;
 }
 
 @font-face{
 	font-family: quicksand;
-	src:url(../Fonts/quicksand/Quicksand_Book_Oblique.otf);
+	src:url(../fonts/quicksand/Quicksand_Book_Oblique.otf);
 	font-style: italic;
 }
 
@@ -35,17 +35,17 @@ html, body{
 }
 
 @media(max-width:767px){
-	
+
 	#minlogo{
 		display:none;}
-	
+
 	#waveLogo{
 		width:200px;
 		height:138px;
 		margin-left:auto;
 		margin-right:auto;
 	}
-	
+
 	#waveText{
 	font: 10px quicksand;
 }}
@@ -54,7 +54,7 @@ html, body{
 	max-width:400px;
 	height:276px;
 	}
-	
+
 	#waveText{
 	font: 14px quicksand;
 }
@@ -64,7 +64,7 @@ html, body{
 	max-width:400px;
 	height:276px;
 	}
-	
+
 	#waveText{
 	font: 14px quicksand;
 }
@@ -78,12 +78,12 @@ html, body{
    right:20%;
    left:20%;
    text-align:center;
-	
+
 
 }
 
 #Home{
-	background: url(../Website%20Images/4052906286_49dac482db_b.jpg) no-repeat center center fixed;
+	background: url(../img/4052906286_49dac482db_b.jpg) no-repeat center center fixed;
 	display: table;
 	height: 100%;
 	position:relative;
@@ -136,7 +136,7 @@ html, body{
 	margin-left: auto ;
   	margin-right: auto ;
 	background:no-repeat;
-	background-image:url(../Website%20Images/logo.png);
+	background-image:url(../img/logo.png);
 	background-size:contain;
 	position: relative;
 }
@@ -144,7 +144,7 @@ html, body{
 #side.pull-left.navbar-toggle{
 	float:left;
 	width:100%;
-	
+
 
 }
 
@@ -153,7 +153,7 @@ html, body{
 }
 
 .navbar.transparent.navbar-inverse .navbar-inner {
-	
+
     border-width: 0px;
     -webkit-box-shadow: 0px 0px;
     box-shadow: 0px 0px;
@@ -199,11 +199,11 @@ html, body{
 	.navmenu-default, .navbar-default .navbar-offcanvas{
 	background:#000;
 	}
-	
+
 	#side{
 		float:left !important;
 	}
-	
+
     .navbar .navbar-nav .navbar-right{
         display: inline-block;
         float: none;
@@ -264,7 +264,7 @@ width:100%;
 }
 
 #Benefits{
-	background: url(../Website%20Images/bg2.png) no-repeat center center fixed;
+	background: url(../img/bg2.png) no-repeat center center fixed;
 	height: 100%;
 	position:relative;
 	-webkit-background-size: cover;
@@ -280,18 +280,18 @@ width:100%;
 	#b1 h1{
 		font: 24px quicksand;
 	}
-	
+
 	#benst p{
 		display:none;
 	}
-	
+
 	#bens{
 	padding-bottom:45%;
 	}
-	
+
 	#benst h3{
 	font-size: 18px;}
-	
+
 	#benst img{
 	max-width:50px;
 	max-height:50px;
@@ -302,7 +302,7 @@ width:100%;
 #b1 h1{
 		font: 47px quicksand;
 	}
-	
+
 	#benst h3{
 	font-size:24px;}
 	#benst img{
@@ -315,10 +315,10 @@ width:100%;
 #b1 h1{
 		font: 48px quicksand;
 	}
-	
+
 	#benst h3{
 	font-size: 24px;}
-	
+
 	#benst img{
 	max-width:100px;
 	max-height:100px;
@@ -383,34 +383,34 @@ width:100%;
    right:5%;
    left:5%;
 	}
-	
+
 	#contact h1{
 	font: 24px quicksand;
 	text-align:center;
 	}
-	
+
 	#contactForms input{
 	width:100%;
 	}
-	
+
 	#contactForms textarea{
 	width:100%;
 	height:400px;
 	}
-	
+
 	#contactForms button{
 	width:100%;
 	}
-	
+
 	#contactMedia{
 		padding-top:5%;
 		text-align:center;
 	}
-	
+
 	#icons{
 	text-align:center;
 	}
-	
+
 }
 @media(min-width:768px){
 	#ContactContainer{
@@ -421,15 +421,15 @@ width:100%;
    right:20%;
    left:15%;
 	}
-	
+
 	#contact h1{
 	font: 36px quicksand;
 	}
-	
+
 	#contactForms{
 	float:left
 	}
-	
+
 	#ContactContainer{
 	padding-top:5%;
 	margin-left: auto ;
@@ -441,7 +441,7 @@ width:100%;
 	width:300px;
 	height:400px;
 	}
-	
+
 	#contactMedia{
 	width:40%;
 	float:right;}
@@ -456,16 +456,16 @@ width:100%;
    right:20%;
    left:15%;
 	}
-	
+
 	#contact h1{
 	font: 48px quicksand;
 	text-align:left;
 	}
-	
+
 	#contactForms{
 	float:left
 	}
-	
+
 	#ContactContainer{
 	padding-top:5%;
 	margin-left: auto ;
@@ -477,7 +477,7 @@ width:100%;
 	width:400px;
 	height:400px;
 	}
-	
+
 	#contactMedia{
 	width:40%;
 	float:right;}
@@ -552,7 +552,7 @@ width:100%;
 }
 
 #waveNav.affix{
-	
+
 	background-color: rgb(0, 0, 0);
     /* RGBa with 0.6 opacity */
     background-color: rgba(0, 0, 0, 0.6);
@@ -561,16 +561,16 @@ width:100%;
     /* For IE 8*/
     -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
 	height:40px;
-	
-	
-	
+
+
+
 	-webkit-transition: all 1s ease-out;
 	-moz-transition: all 1s ease-out;
 	-ms-transition: all 1s ease-out;
 	-o-transition: all 1s ease-out;
 	transition: all 1s ease-out;
-	
-	
+
+
 }
 
 #minlogo{
@@ -589,7 +589,7 @@ transition: all 1s ease-out;
 }
 
 #howitworks{
-	background: url(../Website%20Images/bg3.png) no-repeat center center fixed;
+	background: url(../img/bg3.png) no-repeat center center fixed;
 	min-height: 100%;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
@@ -699,8 +699,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#414345', end
    top: 50%;                         /* 3 */
    transform: translate(0, -50%);
    right:20%;
-   left:20%;} 
-	
+   left:20%;}
+
 	#hContainer h1{
 	font: 24px quicksand;
 	color:#FFF;
@@ -708,12 +708,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#414345', end
 	#i1 img{
 		max-width:100px;
 	}
-	
-	
+
+
 	#HDesc p{
 	font-size:12px;}
 
-	
+
 	#hIcons{
 	text-align:center;
 	}
@@ -724,7 +724,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#414345', end
 	margin-left:auto;
 	margin-right:auto;
 	}
-	
+
 	#filler{
 	height:0px;
 	width:100%;
@@ -733,16 +733,16 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#414345', end
 
 
 @media(min-width:768px){
-	
+
 	#hContainer{
 		margin: 0;
    position: absolute;               /* 2 */
    top: 50%;                         /* 3 */
    transform: translate(0, -50%);
    right:20%;
-   left:20%;} 
-   
-   
+   left:20%;}
+
+
 	#hContainer h1{
 	font: 36px quicksand;
 	color:#FFF;
@@ -753,10 +753,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#414345', end
 	position:relative;
 	float:right;
 	}
-	
+
 	#HDesc p{
 	font-size:14px;}
-	
+
 	#hIcons{
 	float:left;
 	position:relative;
@@ -775,29 +775,29 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#414345', end
    top: 50%;                         /* 3 */
    transform: translate(0, -50%);
    right:20%;
-   left:20%;} 
-	
+   left:20%;}
+
 	#hContainer h1{
 	font: 48px quicksand;
 	color:#FFF;
 	}
-	
+
 	#i1 img{
 		max-width:250px;
 	}
-	
-	
+
+
 	#HDesc{
 	width:35%;
 	position:relative;
 	float:right;
 	}
-	
+
 	#HDesc p{
 	font-size:14px;
 	line-height:15px;
 	}
-	
+
 	#hIcons{
 	float:left;
 	position:relative;

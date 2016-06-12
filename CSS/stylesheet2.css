@@ -1,23 +1,23 @@
 @font-face{
 	font-family: quicksand;
-	src:url(../Fonts/quicksand/Quicksand_Book.otf);
+	src:url(../fonts/quicksand/Quicksand_Book.otf);
 }
 
 @font-face{
 	font-family: quicksand;
-	src:url(../Fonts/quicksand/Quicksand_Bold.otf);
+	src:url(../fonts/quicksand/Quicksand_Bold.otf);
 	font-weight: bold;
 }
 
 @font-face{
 	font-family: quicksand;
-	src:url(../Fonts/quicksand/Quicksand_Light.otf);
+	src:url(../fonts/quicksand/Quicksand_Light.otf);
 	font-weight: 100;
 }
 
 @font-face{
 	font-family: quicksand;
-	src:url(../Fonts/quicksand/Quicksand_Book_Oblique.otf);
+	src:url(../fonts/quicksand/Quicksand_Book_Oblique.otf);
 	font-style: italic;
 }
 
@@ -32,7 +32,7 @@ html, body{
 }
 
 #Main{
-	background:url(../Website%20Images/bg3.png);
+	background:url(../img/bg3.png);
 	height:100%;
 	width:100%;
 	min-height:100%;
@@ -53,7 +53,7 @@ html, body{
 
 
 #logo{
-	background:url(../Website%20Images/logo.png);
+	background:url(../img/logo.png);
 	height:50px;
 	width:70px;
 	background-size:cover;
