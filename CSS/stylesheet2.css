@@ -33,20 +33,24 @@ html, body{
 
 #Main{
 	background:url(../img/bg3.jpg);
-	height:100%;
-	width:100%;
+	display: table;
+	position:relative;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+  	-o-background-size: cover;
+ 	background-size: cover;
+  	width:100%;
 	min-height:100%;
-	background-size:cover;
+	overflow:inherit;
 }
 
 #Box{
   width: 50%;
   height:60%;
-  overflow: visible;
   display:block;
-  margin: auto;
-  position: absolute;
-  top: 0; left: 0; bottom: 0; right: 0;
+  margin-top:10%;
+  margin-left:auto;
+  margin-right:auto;
   text-align:center;
   font:12px quicksand;
 }
@@ -152,8 +156,21 @@ button{
 	font-style:italic;
 }
 
-#name{
-	width:123px;
+@media(max-width:767px){
+	#name{
+	}
+}
+
+@media(min-width:768px){
+	#name{
+		width:123px;
+	}
+}
+
+@media(min-width:992px){
+	#name{
+		width:123px;
+	}
 }
 
 #validation{
