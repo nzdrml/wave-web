@@ -268,7 +268,7 @@ width:100%;
 }
 
 #Benefits{
-	background: url(../img/bg2.png) no-repeat center center fixed;
+	background: url(../img/bg2.jpg) no-repeat center center fixed;
 	min-height: 100%;
 	position:relative;
 	-webkit-background-size: cover;
@@ -590,7 +590,7 @@ transition: all 1s ease-out;
 }
 
 #howitworks{
-	background: url(../img/bg3.png) no-repeat center center fixed;
+	background: url(../img/bg3.jpg) no-repeat center center fixed;
 	min-height: 100%;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
