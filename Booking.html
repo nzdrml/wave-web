@@ -3,69 +3,209 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Booking Screen</title>
+<link href="css/bootstrap-theme.min.css"  rel="stylesheet"/>
+<link href="css/bootstrap.min.css" rel="stylesheet"/>
+<link href="css/stylesheet3.css" rel="stylesheet"/>
 </head>
 ​
 <body>
-<div class="container">
-	<div>
-    	<div>Logo</div>
-        <div>Nav</div>
-    </div>
+<div class="container-fluid">
+    	 <nav class="navbar navbar-inner navbar-fixed-top" id="waveNav" >
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <div>
+            <button type="button" class="pull-left navbar-toggle" id="side" data-toggle="offcanvas" data-target="#nv" data-canvas="body"><span
+                                    class="sr-only">Toggle navigation</span> <span
+                                    class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+          </div>
+          <a class="navbar-brand" id="minlogo"><img
+                                src="img/logo2.png"/></a></div>
+        <!--Navbar Brand!-->
+        <div id="nv" class="collapse navbar-collapse">
+          <ul id="nvu" class="nav navbar-nav navbar-right">
+            <li><a href="#Home" class="selectedClass">Booking</a></li>
+             <li><a href="" >More Nav</a></li>
+          </ul>
+          <!--Ul!--> 
+        </div>
+        <!--collapse!--> 
+      </div>
+      <!--Container!--> 
+    </nav>
+    <!--NavBar!-->
     
-    <div>
-    	<div>
+    
+    <div id="container">
+    	<div id="pad">
         	<div>
-            	<div>Book Your Ride</div>
-                
+            	<div><h1>Book Your Ride</h1>
+                </div>
+                <hr>
                 <div>
                 
-                	<div>
-                    	1. Choose Your Route
-                    	<div>
-                        	Form Form Form
+                	<div id="forms">
+                    	<h2>1. Choose Your Route</h2>
+                    	<div class="row">
+                        	<div class="col-sm-4">
+                            <h4>Pickup Point</h4>
+                            <select name="CityP">
+                            	 <option value="" disabled selected>City</option>
+                                  <option value="Quezon">Quezon</option>
+                                  <option value="San Juan">San Juan</option>
+                            </select>
+                            
+                            <select name="pickPoint">
+                            	  <option value="" disabled selected>Pickup Point</option>
+                                  <option value="Acacia">Acacia</option>
+                                  <option value="Makati">Makati</option>
+                                  <option value="BGC">BGC</option>
+                                  <option value="McKinley">McKinley</option>
+                            </select>
+                            </div>
+                            <div class="col-sm-4">
+                            <h4>Drop Off Point</h4>
+                            <select name="CityD">
+                            	  <option value="" disabled selected>City</option>
+                                  <option value="Quezon">Quezon</option>
+                                  <option value="San Juan">San Juan</option>
+                            </select>
+                            
+                            <select name="dropPoint">
+                            	  <option value="" disabled selected>Drop Off Point</option>
+                                  <option value="Acacia">Acacia</option>
+                                  <option value="Makati">Makati</option>
+                                  <option value="BGC">BGC</option>
+                                  <option value="McKinley">McKinley</option>
+                            </select>
+                            </div>
+                            <div class="col-sm-4">
+                                
+                                <h4>Pickup time</h4>
+                                <select name="timeNum">
+                                	  <option value="" disabled selected>Time</option>
+                                      <option value="8">8</option>
+                                      <option value="9">9</option>
+                                      <option value="10">10</option>
+                                      <option value="11">11</option>
+                                </select>
+                                
+                                <select name="dropPoint">
+                                      <option value="AM">AM</option>
+                                      <option value="PM">PM</option>
+                                </select>
+                                
+                            </div>
                         </div>
                     </div>
                     
                     <div>
-                    	2. Return Trip(OptionaL)
-                    	<div>
-                        	Form Form Form
+                    	<h2>2. Return Trip(Optional)</h2>
+                    	<div class="row">
+                        	<div class="col-sm-4">
+                            <h4>Pickup Point</h4>
+                            <select name="CityP">
+                            	 <option value="" disabled selected>City</option>
+                                  <option value="Quezon">Quezon</option>
+                                  <option value="San Juan">San Juan</option>
+                            </select>
+                            
+                            <select name="pickPoint">
+                            	  <option value="" disabled selected>Pickup Point</option>
+                                  <option value="Acacia">Acacia</option>
+                                  <option value="Makati">Makati</option>
+                                  <option value="BGC">BGC</option>
+                                  <option value="McKinley">McKinley</option>
+                            </select>
+                            </div>
+                            <div class="col-sm-4">
+                            <h4>Drop Off Point</h4>
+                            <select name="CityD">
+                            	  <option value="" disabled selected>City</option>
+                                  <option value="Quezon">Quezon</option>
+                                  <option value="San Juan">San Juan</option>
+                            </select>
+                            
+                            <select name="dropPoint">
+                            	  <option value="" disabled selected>Drop Off Point</option>
+                                  <option value="Acacia">Acacia</option>
+                                  <option value="Makati">Makati</option>
+                                  <option value="BGC">BGC</option>
+                                  <option value="McKinley">McKinley</option>
+                            </select>
+                            </div>
+                            <div class="col-sm-4">
+                                
+                                <h4>Pickup time</h4>
+                                <select name="timeNum">
+                                	  <option value="" disabled selected>Time</option>
+                                      <option value="8">8</option>
+                                      <option value="9">9</option>
+                                      <option value="10">10</option>
+                                      <option value="11">11</option>
+                                </select>
+                                
+                                <select name="dropPoint">
+                                      <option value="AM">AM</option>
+                                      <option value="PM">PM</option>
+                                </select>
+                                
+                            </div>
                         </div>
                     </div>
                     
-                    <div>
-                    	3. Select Your Dates
-                    	<div>
-                        	Calendar
+                   <div class="row"> 
+                    <div class="col-sm-5">
+                    	<h3>3. Select Your Dates</h3>
+                    	<div class="row">
+                        	<div class="col-sm-4">
+                            <input type="date" name="dates">
+                            </div>
                         </div>
                     </div>
-   
+                    
+                    <div class="col-sm-5">
+                    	<h3>Map</h3>
+                        <div>
+                        There will be a map here, just wait.
+                        </div>
+                    </div>
+                    
+   				</div>
+                
                 </div>
                 
              	    <div>
-                    	<div>
-                        	<div>Trip Summary
-                            	<div>Placeholder
-                                	Placeholder
-                                    Placeholder
+                    	<div class="row">
+                        	<div class="col-sm-6"><h3>Trip Summary</h3>
+                            	<div>Placeholder<br>
+                                	Placeholder<br>
+                                    Placeholder<br>
                                 </div>
                             </div>
-                            <div>Cost
-                            	<div>Placeholder
-                            	Placeholder
+                            <div class="col-sm-6"><h3>Cost</h3>
+                            	<div>P100<br>
+                                <br>
+                            	P100<br>
                                 </div>
                            </div>
                         </div>
                     </div>
                     
-                    <div>
-                    	Submit
-                    </div>
-                
+                    <div class="row">
+                        <div class="col-sm-12" id="submit">
+                            <p><button>Reserve My Ride</button></p>
+                        </div>
+                	</div>
             </div>
         </div>
     </div>
 ​
 </div>
+
+
+<script src="js/bootstrap.min.js"></script>
+<script src='https://maps.googleapis.com/maps/api/js?v=3.exp'></script> 
+<script src="js/jquery.min.js"></script> 
+
 </body>
 </html>

@@ -1,0 +1,116 @@
+@charset "UTF-8";
+/* CSS Document */
+@font-face{
+	font-family: quicksand;
+	src:url(../fonts/quicksand/Quicksand_Book.otf);
+}
+
+@font-face{
+	font-family: quicksand;
+	src:url(../fonts/quicksand/Quicksand_Bold.otf);
+	font-weight: bold;
+}
+
+@font-face{
+	font-family: quicksand;
+	src:url(../fonts/quicksand/Quicksand_Light.otf);
+	font-weight: 100;
+}
+
+@font-face{
+	font-family: quicksand;
+	src:url(../fonts/quicksand/Quicksand_Book_Oblique.otf);
+	font-style: italic;
+}
+
+body{
+	background:#b7b7b7;
+}
+
+#container{
+	width:85%;
+	margin-left:auto;
+	margin-right:auto;
+	background:#FFF;
+	border-radius:1%;
+	-webkit-box-shadow: 6px 4px 10px 5px rgba(0,0,0,0.76);
+	-moz-box-shadow: 6px 4px 10px 5px rgba(0,0,0,0.76);
+	box-shadow: 6px 4px 10px 5px rgba(0,0,0,0.76);
+	margin-top:5%;
+	
+}
+
+#pad{
+	padding:5%;
+}
+
+#submit{
+	text-align:center;
+}
+
+#waveNav{
+	top:0;
+	font: 14px quicksand;
+	text-transform:uppercase;
+	font-weight:bold;
+	color:#FFFFFF;
+	-webkit-transition: all 1s ease-in;
+	-moz-transition: all 1s ease-in;
+	-ms-transition: all 1s ease-in;
+	-o-transition: all 1s ease-in;
+	transition: all 1s ease-in;
+	background-color: rgba(0, 0, 0, 0.6);
+    /* For IE 5.5 - 7*/
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
+    /* For IE 8*/
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+}
+
+
+.nav.navbar-nav.navbar-right li a {
+    color: white;
+	text-shadow: none;
+}
+
+.nav.navbar-nav.navbar-right > li > a:hover {
+    color: #8ccdf9;
+    border-width: 0px;
+    -webkit-box-shadow: 0px 0px;
+    box-shadow: 0px 0px;
+    background-color: rgba(0,0,0,0.0);
+    background-image: -webkit-gradient(linear, 50.00% 0.00%, 50.00% 100.00%, color-stop( 0% , rgba(0,0,0,0.00)),color-stop( 100% , rgba(0,0,0,0.00)));
+    background-image: -webkit-linear-gradient(270deg,rgba(0,0,0,0.00) 0%,rgba(0,0,0,0.00) 100%);
+    background-image: linear-gradient(180deg,rgba(0,0,0,0.00) 0%,rgba(0,0,0,0.00) 100%);
+
+}
+
+.nav.navbar-nav.navbar-right > li > a:focus {
+    color: #8ccdf9;
+    border-width: 0px;
+    -webkit-box-shadow: 0px 0px;
+    box-shadow: 0px 0px;
+    background-color: rgba(0,0,0,0.0);
+    background-image: -webkit-gradient(linear, 50.00% 0.00%, 50.00% 100.00%, color-stop( 0% , rgba(0,0,0,0.00)),color-stop( 100% , rgba(0,0,0,0.00)));
+    background-image: -webkit-linear-gradient(270deg,rgba(0,0,0,0.00) 0%,rgba(0,0,0,0.00) 100%);
+    background-image: linear-gradient(180deg,rgba(0,0,0,0.00) 0%,rgba(0,0,0,0.00) 100%);
+}
+
+.nav.navbar-nav.navbar-right > li > a.selectedClass {
+    color: #8ccdf9;
+}
+
+#submit button{
+	margin-top:5%;
+	width:20%;
+	border:none;
+	background:#8ccef9;
+	
+}
+
+#submit button:hover{
+	color:#fff;
+}
+
+#pad select{
+	border:none;
+}
