@@ -218,14 +218,15 @@
         <!--ContactHeader!-->
         <div id="contactInfo">
           <div id="contactForms">
-            <form action="MAILTO:info.ridewave@gmail.com" method="post" enctype="text/plain">
-              <input type="text" name="Name" placeholder=" Your Name"/>
+            <form method="post" enctype="text/plain" id="cContact">
+              <input type="text" name="cName" id="cName" placeholder=" Your Name" required/>
               <br/>
-              <input type="email" name="email" placeholder=" Your E-Mail"/>
+              <input type="email" name="cMail" id="cMail" placeholder=" Your E-Mail" required/>
               <br/>
-              <textarea name="Message" form="usrform" placeholder=" Your Message"></textarea>
+              <textarea name="Message" form="usrform" id="cMess" name="cMess" placeholder=" Your Message" required></textarea>
               <br/>
-              <button type="submit">Send</button>
+              <button type="submit" id="cSubmit">Send</button>
+              <div id="cc"></div>
             </form>
           </div>
           <!--ContactForms!-->
@@ -261,5 +262,28 @@
 <script src="js/scroll.js"></script> 
 <script src="js/jasny-bootstrap.min.js"></script> 
 <script src="js/waveside.js"></script>
+<script>
+$(document).ready(function(){
+	$('#cSubmit').click(function(){
+		
+		var data={
+			name: $('#cName').val(),
+			email: $('#cMail').val(),
+			message:  $('#cMess').val()
+		};
+		
+		$ajax({
+			type: POST,
+			url: "send.php",
+			data: data,
+			success: function(){
+				$('#success').fadeIn(1000);
+			}
+			});
+			
+			return false;
+	});
+});
+</script>
 </body>
 </html>

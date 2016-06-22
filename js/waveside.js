@@ -30,3 +30,4 @@ var dest = elementOffset;
 
 $('#waveNav').affix({offset: dest});
 $('#minlogo').affix({offset: dest});
+
