@@ -10,6 +10,29 @@
 <link rel="stylesheet" href="css/bootstrap.min.css"/>
 <link rel="stylesheet" href="css/bootstrap-theme.min.css"/>
 <link rel="stylesheet" href="css/jasny-bootstrap.min.css"/>
+<script>
+$(document).ready(function(){
+	$('#cSubmit').click(function(){
+		
+		var data={
+			cName: $('#cName').val(),
+			cMail: $('#cMail').val(),
+			cMess:  $('#cMess').val()
+		};
+		
+		$ajax({
+			type: POST,
+			url: "send.php",
+			data: data,
+			success: function(){
+				$('#success').fadeIn(1000);
+			}
+			});
+			
+			return false;
+	});
+});
+</script>
 </head>
 
 <body>
@@ -218,7 +241,7 @@
         <!--ContactHeader!-->
         <div id="contactInfo">
           <div id="contactForms">
-            <form method="post" enctype="text/plain" id="cContact">
+            <form method="post" enctype="text/plain" id="cContact" action='?'>
               <input type="text" name="cName" id="cName" placeholder=" Your Name" required/>
               <br/>
               <input type="email" name="cMail" id="cMail" placeholder=" Your E-Mail" required/>
@@ -262,28 +285,6 @@
 <script src="js/scroll.js"></script> 
 <script src="js/jasny-bootstrap.min.js"></script> 
 <script src="js/waveside.js"></script>
-<script>
-$(document).ready(function(){
-	$('#cSubmit').click(function(){
-		
-		var data={
-			name: $('#cName').val(),
-			email: $('#cMail').val(),
-			message:  $('#cMess').val()
-		};
-		
-		$ajax({
-			type: POST,
-			url: "send.php",
-			data: data,
-			success: function(){
-				$('#success').fadeIn(1000);
-			}
-			});
-			
-			return false;
-	});
-});
-</script>
+
 </body>
 </html>
