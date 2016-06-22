@@ -5,6 +5,6 @@ if($_POST){
     $message = $_POST['cMess'];
 
 //send email
-    mail("livingbetweenrainbows@gmail.com", "Wave Query" .$email, $message);
+    mail("livingbetweenrainbows@gmail.com", "Wave Query",$email, $message);
 }
 ?>
