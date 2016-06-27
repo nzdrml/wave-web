@@ -4,35 +4,15 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta name="description" content="RideWave is a community carpool start up">
+<meta name="keywords" content="Ridewave,Ride,Wave,Community,Carpool,Start,Up,Startup,Shuttle,service,Philippines,Metro,Manila,NCR">
+<meta name="author" content="RideWave">
 <title>Ride the Wave</title>
 <link rel="shortcut icon" type="image/png" href="img/icons/favicon.png"/>
 <link rel="stylesheet" href="css/stylesheet.css"/>
 <link rel="stylesheet" href="css/bootstrap.min.css"/>
 <link rel="stylesheet" href="css/bootstrap-theme.min.css"/>
 <link rel="stylesheet" href="css/jasny-bootstrap.min.css"/>
-<script>
-$(document).ready(function(){
-	$('#cSubmit').click(function(){
-		
-		var data={
-			cName: $('#cName').val(),
-			cMail: $('#cMail').val(),
-			cMess:  $('#cMess').val()
-		};
-		
-		$ajax({
-			type: POST,
-			url: "send.php",
-			data: data,
-			success: function(){
-				$('#success').fadeIn(1000);
-			}
-			});
-			
-			return false;
-	});
-});
-</script>
 </head>
 
 <body>
@@ -104,8 +84,7 @@ $(document).ready(function(){
           <!--Item!-->
           
           <div class="item"><img src="img/c3.jpg">
-            <div class="carousel-caption" id="CCap"> "Share the love & cost with friends! Wave makes
-              scheduled commute fun & hassle-free." </div>
+            <div class="carousel-caption" id="CCap"> "Travel safely for a fixed price. Enjoy pre-secured, scheduled rides." </div>
             <!--Caption!--> 
           </div>
           <!--Item!--> 
@@ -120,14 +99,17 @@ $(document).ready(function(){
     <div id="Benefits">
       <div class="container-fluid">
         <div id="b1">
-          <h1>Benefits</h1>
+          <h1>Our Vision</h1>
           <p>To provide the best everyday commute system that is reliable, comfortable, and safe.</p>
         </div>
         <!--b1!-->
         
         <div id="bens">
+          
           <center>
             <div id="benst">
+            <div align="left"><h1>BENEFITS</h1></div>
+            <br>
               <div class="tr">
                 <div class="td"><img src="img/icons/1.png"/>
                   <h3>Sure Seats</h3>
@@ -285,6 +267,28 @@ $(document).ready(function(){
 <script src="js/scroll.js"></script> 
 <script src="js/jasny-bootstrap.min.js"></script> 
 <script src="js/waveside.js"></script>
-
+<script>
+$(document).ready(function(){
+	$('#cSubmit').click(function(){
+		
+		var data={
+			cName: $('#cName').val(),
+			cMail: $('#cMail').val(),
+			cMess:  $('#cMess').val()
+		};
+		
+		$.ajax({
+			method: "POST",
+			url: "send.php",
+			data: data,
+			success: function(){
+				$('#success').fadeIn(1000);
+			}
+			});
+			
+			return false;
+	});
+});
+</script>
 </body>
 </html>

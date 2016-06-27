@@ -16,6 +16,6 @@ if($_POST){
 EMAIL;
 
 //send email
-    mail("livingbetweenrainbows@gmail.com", "Wave Query",$message,$email);
+    mail("info.ridewave@gmail.com", "Wave Query",$message2,$email);
 }
 ?>
