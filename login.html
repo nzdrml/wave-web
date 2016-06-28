@@ -50,7 +50,6 @@ $(document).ready(function () {
             return "Random String";
         }
     };
-​
     $.ajaxSetup({
         headers: {
             Authorization: auth.getToken()
@@ -62,22 +61,7 @@ $(document).ready(function () {
             return auth.isAuthenticated();
         }
     });
-​
-    
-	var req = {
- 		method: 'POST',
- 		url: '128.199.232.120/oauth/token',
- 		headers: {
-  			'Content-Type': application/json
- 		},
- 		data: { 
-			"client_id": "2d01f866507b7e8755be57d11da36d8493dcba57245c09321078d7b4d6d74198",
-			"client_secret": "eb59bdac73d3eec58706f9f2808666a69f8ff5a0c61fc541593236e80a7c1020",
-			"grant_type": "client_credentials"
-		 	}
-		}
 	
-​
     function trueRequestFunction() {
          $.ajax({
              url: "http://128.199.232.120/oauth/token",
@@ -85,11 +69,22 @@ $(document).ready(function () {
              data: {
                  "client_id": "2d01f866507b7e8755be57d11da36d8493dcba57245c09321078d7b4d6d74198",
                  "client_secret": "eb59bdac73d3eec58706f9f2808666a69f8ff5a0c61fc541593236e80a7c1020",
-                 "grant_type": "client_credentials"
+                 "grant_type": "client_credentials",
+			success: function(data){
+				console.log(data);
+				var json_obj = $.parseJSON(data);
+   			 }
              }
          });
+		 
      }
-​
+	 
+	
+		 
+	$("button").click(function(){
+		var v = trueRequestFunction();
+	});
+
 });
 </script>
 </body>
