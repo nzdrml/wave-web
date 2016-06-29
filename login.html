@@ -20,10 +20,10 @@
                     <div id="logo"></div>
                 </a>
                 <div ng-app="">
-                    <p><input type="text" name="username" ng-model="username" placeholder="Username"></p>
-                    <p><input type="password" name="password" ng-model="password" placeholder="Password"></p>
+                    <p><input type="text" name="username" ng-model="username" id="lEmail" placeholder="Username"></p>
+                    <p><input type="password" name="password" ng-model="password" id="lPass" placeholder="Password"></p>
                     <p>
-                        <button type="submit" id="button">Login</button>
+                        <button type="submit" id="button1">Login</button>
                     </p>
                 </div>
                 <div id="link"><a href="register.html">Not a User? Register Now!</a></div>
@@ -34,93 +34,6 @@
 
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
-<script>
-$(document).ready(function () {
-    var auth = {
-        getToken: function() {
-            localStorage.getItem('access_token');
-        },
-        setToken: function(access_token) {
-            localStorage.setItem('access_token',access_token);
-			console.log(access_token);
-			
-        },
-        isAuthenticated: function() {
-            return this.getToken()!=null;
-        },
-        requestToken: function() {
-            return "Random String";
-        }
-    };
-    $.ajaxSetup({
-        headers: {
-            Authorization: auth.getToken()
-        },
-        beforeSend: function(jqXHR, request) {
-            if (request.url.indexOf("oauth/token") > -1 ){
-                return true;
-            }
-            return auth.isAuthenticated();
-        }
-    });
-
-    function trueRequestFunction() {
-         $.ajax({
-             url: "http://128.199.232.120/oauth/token",
-             method: "POST",
-             data: {
-                 "client_id": "2d01f866507b7e8755be57d11da36d8493dcba57245c09321078d7b4d6d74198",
-                 "client_secret": "eb59bdac73d3eec58706f9f2808666a69f8ff5a0c61fc541593236e80a7c1020",
-                 "grant_type": "client_credentials"}, 
-			success: function(data){
-				console.log("Success");
-				console.log(data);
-				//var json_obj = $.parseJSON(data);
-   			 },
-			error: function(){
-				console.log("Nope");
-			}
-
-         });
-		 
-		 
-     }
-	 
-	 
-	 trueRequestFunction();
-	 
-	 token = localStorage.getItem('access_token');
-	 
-	 function loginFunction(){
-		 
-	 	$.ajax({
-			url: "http://128.199.232.120/login",
-			method: "POST",
-			headers: {
-				Authorization:"Bearer "+ localStorage.getItem('access_token')
-    		},
-			data:{
-				"email":"livingbetweenrainbows@gmail.com",
-				"password":"password"	
-			},
-			success: function(data){
-				console.log("Logged in");
-				console.log(data);
-			},
-			error: function(){
-				console.log("Can't Log In");
-			}
-		});
-	 }
-	 
-	 loginFunction();
-		 
-	$("button").click(function(){
-		loginFunction();
-		
-	});
-
-});
-</script>
+<script src="js/loginregister.js"></script>
 </body>
 </html>
