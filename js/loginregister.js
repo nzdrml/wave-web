@@ -4,11 +4,16 @@ $(document).ready(function () {
             return localStorage.getItem('access_token');
 			
         },
+		getXToken:function(){
+			return localStorage.getItem('x_token');
+		},
         setToken: function(access_token) {
             localStorage.setItem('access_token',access_token);
-			console.log(access_token);
 			
         },
+		setXToken: function(access_token){
+			localStorage.setItem('x_token',access_token);
+		},
         isAuthenticated: function() {
             return this.getToken()!=null;
         },
@@ -67,6 +72,7 @@ $(document).ready(function () {
 			success: function(data){
 				console.log("Logged in");
 				console.log(data);
+				auth.setXToken(data.access_token);
 			},
 			error: function(){
 				console.log("Can't Log In");
