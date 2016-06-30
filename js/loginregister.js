@@ -105,7 +105,10 @@ $(document).ready(function () {
 					"password_confirmation":p2}
 			},
 			success: function(data){
-				console.log(data);
+				//console.log(data);
+				window.setTimeout(function() {
+    	window.location.href = "RegRedirect.html";
+		});
 			},
 			error: function(){
 				console.log("Cannot create");
