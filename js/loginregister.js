@@ -61,13 +61,13 @@ $(document).ready(function () {
 	 
 	 trueRequestFunction();
 	 
-	 function loginFunction(){
+	 function loginFunction(e,p){
 	 	$.ajax({
 			url: "http://128.199.232.120/login",
 			method: "POST",
 			data:{
-				"email":"test@test.com",
-				"password":"password"	
+				"email": e,
+				"password": p	
 			},
 			success: function(data){
 				console.log("Logged in");
@@ -114,7 +114,9 @@ $(document).ready(function () {
 	 }
 
 	$("#button1").click(function(){
-		loginFunction();
+		var e = $('#lEmail').val();
+		var p = $('#lPass').val();
+		loginFunction(e,p);
 		
 	});
 	
