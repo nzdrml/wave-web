@@ -2,14 +2,14 @@ $(document).ready(function () {
     var auth = {
         getToken: function() {
             return localStorage.getItem('access_token');
-			
+
         },
 		getXToken:function(){
 			return localStorage.getItem('x_token');
 		},
         setToken: function(access_token) {
             localStorage.setItem('access_token',access_token);
-			
+
         },
 		setXToken: function(access_token){
 			localStorage.setItem('x_token',access_token);
@@ -21,8 +21,8 @@ $(document).ready(function () {
             return "Random String";
         }
     };
-	
-	
+
+
     $.ajaxSetup({
         headers: {
             Authorization:"Bearer "+ auth.getToken()
@@ -42,7 +42,7 @@ $(document).ready(function () {
              data: {
                  "client_id": "2d01f866507b7e8755be57d11da36d8493dcba57245c09321078d7b4d6d74198",
                  "client_secret": "eb59bdac73d3eec58706f9f2808666a69f8ff5a0c61fc541593236e80a7c1020",
-                 "grant_type": "client_credentials"}, 
+                 "grant_type": "client_credentials"},
 			success: function(data){
 				console.log("Success");
 				console.log(data);
@@ -54,20 +54,20 @@ $(document).ready(function () {
 			}
 
          });
-		 
-		 
+
+
      }
-	 
-	 
+
+
 	 trueRequestFunction();
-	 
+
 	 function loginFunction(e,p){
 	 	$.ajax({
 			url: "http://128.199.232.120/login",
 			method: "POST",
 			data:{
 				"email": e,
-				"password": p	
+				"password": p
 			},
 			success: function(data){
 				console.log("Logged in");
@@ -79,7 +79,7 @@ $(document).ready(function () {
 			}
 		});
 	 }
-	 
+
 	 function getUsers(){
 	 	$.ajax({
 			url: "http://128.199.232.120/users",
@@ -89,9 +89,9 @@ $(document).ready(function () {
 				console.log(JSON.stringify(data));
 			}
 		});
-	 
+
 	 }
-	 
+
 	 function registerUser(e,f,l,p1,p2){
 	 	$.ajax({
 			url: "http://128.199.232.120/users",
@@ -107,7 +107,7 @@ $(document).ready(function () {
 			success: function(data){
 				//console.log(data);
 				window.setTimeout(function() {
-    	window.location.href = "RegRedirect.html";
+    	window.location.href = "../postregister.html";
 		});
 			},
 			error: function(){
@@ -120,9 +120,9 @@ $(document).ready(function () {
 		var e = $('#lEmail').val();
 		var p = $('#lPass').val();
 		loginFunction(e,p);
-		
+
 	});
-	
+
 	$("#button2").click(function(){
 		var email=$('#rEmail').val();
 	 	var fName=$('#fName').val();
