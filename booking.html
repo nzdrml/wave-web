@@ -10,7 +10,7 @@
 ​
 <body>
 <div class="container-fluid">
-    	 <nav class="navbar navbar-inner navbar-fixed-top" id="waveNav" >
+    	 <nav class="navbar navbar-inner navbar-static-top" id="waveNav" >
       <div class="container-fluid">
         <div class="navbar-header">
           <div>
@@ -25,6 +25,7 @@
           <ul id="nvu" class="nav navbar-nav navbar-right">
             <li><a href="#Home" class="selectedClass">Booking</a></li>
              <li><a href="" >More Nav</a></li>
+             <li><a href="login.html" id="logout">Logout</a></li>
           </ul>
           <!--Ul!--> 
         </div>
@@ -54,12 +55,12 @@
                                   <option value="San Juan">San Juan</option>
                             </select>
                             
-                            <select name="pickPoint">
+                            <select name="pickPoint" id="pP1">
                             	  <option value="" disabled selected>Pickup Point</option>
-                                  <option value="Acacia">Acacia</option>
-                                  <option value="Makati">Makati</option>
-                                  <option value="BGC">BGC</option>
-                                  <option value="McKinley">McKinley</option>
+                                  <option value="1">Acacia</option>
+                                  <option value="2">Makati</option>
+                                  <option value="3">BGC</option>
+                                  <option value="4">McKinley</option>
                             </select>
                             </div>
                             <div class="col-sm-4">
@@ -70,23 +71,23 @@
                                   <option value="San Juan">San Juan</option>
                             </select>
                             
-                            <select name="dropPoint">
+                            <select name="dropPoint" id="dP1">
                             	  <option value="" disabled selected>Drop Off Point</option>
-                                  <option value="Acacia">Acacia</option>
-                                  <option value="Makati">Makati</option>
-                                  <option value="BGC">BGC</option>
-                                  <option value="McKinley">McKinley</option>
+                                  <option value="1">Acacia</option>
+                                  <option value="2">Makati</option>
+                                  <option value="3">BGC</option>
+                                  <option value="4">McKinley</option>
                             </select>
                             </div>
                             <div class="col-sm-4">
                                 
                                 <h4>Pickup time</h4>
-                                <select name="timeNum">
+                                <select name="timeNum" id="t1">
                                 	  <option value="" disabled selected>Time</option>
-                                      <option value="8">8</option>
-                                      <option value="9">9</option>
-                                      <option value="10">10</option>
-                                      <option value="11">11</option>
+                                      <option value="8:00:00.000">8</option>
+                                      <option value="9:00:00.000">9</option>
+                                      <option value="10:00:00.000">10</option>
+                                      <option value="11:00:00.000">11</option>
                                 </select>
                                 
                                 <select name="dropPoint">
@@ -109,12 +110,12 @@
                                   <option value="San Juan">San Juan</option>
                             </select>
                             
-                            <select name="pickPoint">
+                            <select name="pickPoint" id="pP2">
                             	  <option value="" disabled selected>Pickup Point</option>
-                                  <option value="Acacia">Acacia</option>
-                                  <option value="Makati">Makati</option>
-                                  <option value="BGC">BGC</option>
-                                  <option value="McKinley">McKinley</option>
+                                  <option value="1">Acacia</option>
+                                  <option value="2">Makati</option>
+                                  <option value="3">BGC</option>
+                                  <option value="4">McKinley</option>
                             </select>
                             </div>
                             <div class="col-sm-4">
@@ -125,23 +126,23 @@
                                   <option value="San Juan">San Juan</option>
                             </select>
                             
-                            <select name="dropPoint">
+                            <select name="dropPoint" id="dP2">
                             	  <option value="" disabled selected>Drop Off Point</option>
-                                  <option value="Acacia">Acacia</option>
-                                  <option value="Makati">Makati</option>
-                                  <option value="BGC">BGC</option>
-                                  <option value="McKinley">McKinley</option>
+                                  <option value="1">Acacia</option>
+                                  <option value="2">Makati</option>
+                                  <option value="3">BGC</option>
+                                  <option value="4">McKinley</option>
                             </select>
                             </div>
                             <div class="col-sm-4">
                                 
                                 <h4>Pickup time</h4>
-                                <select name="timeNum">
+                                <select name="timeNum" id="t2">
                                 	  <option value="" disabled selected>Time</option>
-                                      <option value="8">8</option>
-                                      <option value="9">9</option>
-                                      <option value="10">10</option>
-                                      <option value="11">11</option>
+                                      <option value="8:00:00.000">8</option>
+                                      <option value="9:00:00.000">9</option>
+                                      <option value="10:00:00.000">10</option>
+                                      <option value="11:00:00.000">11</option>
                                 </select>
                                 
                                 <select name="dropPoint">
@@ -158,7 +159,7 @@
                     	<h3>3. Select Your Dates</h3>
                     	<div class="row">
                         	<div class="col-sm-4">
-                            <input type="date" name="dates">
+                            <input type="date" name="dates" id="date">
                             </div>
                         </div>
                     </div>
@@ -193,7 +194,7 @@
                     
                     <div class="row">
                         <div class="col-sm-12" id="submit">
-                            <p><button>Reserve My Ride</button></p>
+                            <p><button id="submitRide">Reserve My Ride</button></p>
                         </div>
                 	</div>
             </div>
@@ -202,10 +203,11 @@
 ​
 </div>
 
-
-<script src="js/bootstrap.min.js"></script>
-<script src='https://maps.googleapis.com/maps/api/js?v=3.exp'></script> 
 <script src="js/jquery.min.js"></script> 
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.min.js"></script> 
+<script src="js/booking.js"></script>
+
 
 </body>
 </html>

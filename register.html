@@ -24,9 +24,10 @@
                 <input type="text" id="lName" class="name" name="lName" ng-model="lName" placeholder="Last Name" ng-class="{highlight:Register.lName.$error.required && Register.lName.$touched}" required>
               </p>
               <p>
-                <input type="email" id="rEmail" name="email" ng-model="email" placeholder="E-mail" required ng-class="{highlight:Register.email.$error.required && Register.email.$touched || Register.email.$error.email}" required>
-              <p>
-                <input type="text" name="pnumber" ng-model="pnumber" placeholder="Mobile Phone Number" ng-class="{highlight:Register.pnumber.$error.required && Register.pnumber.$touched || (Register.pnumber.$error.pattern || Register.pnumber.$error.minlength || Register.pnumber.$error.maxlength)}" ng-minlength="11" ng-maxlength="11" ng-pattern="/\(?09([0-9]{2})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/g" required>
+                <input type="email" id="rEmail" name="email" ng-model="email" placeholder="E-mail" required ng-class="{highlight:Register.email.$error.required && Register.email.$dirty || Register.email.$error.email}" required>
+              </p>
+              <p><div id="eError" class="error">Email already taken</div></p>
+                <input type="text" name="pnumber" id="pnumber" ng-model="pnumber" placeholder="Mobile Phone Number" ng-class="{highlight:Register.pnumber.$error.required && Register.pnumber.$touched || (Register.pnumber.$error.pattern || Register.pnumber.$error.minlength || Register.pnumber.$error.maxlength)}" ng-minlength="11" ng-maxlength="11" ng-pattern="/\(?09([0-9]{2})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/g" required>
               </p>
               <span ng-show="Register.pnumber.$error.pattern">
               <p>Please input your 11 digit phone number.</p>
@@ -41,7 +42,7 @@
               </p>
               <p><span ng-show="password2!=password">Passwords do not match</span></p>
               <p>
-                <input type="text" name="COS" ng-model="COS" placeholder="Company/Organization/School" ng-class="{highlight:Register.COS.$error.required && Register.COS.$touched}" required>
+                <input type="text" name="COS" id="com" ng-model="COS" placeholder="Company/Organization/School" ng-class="{highlight:Register.COS.$error.required && Register.COS.$touched}" required>
               </p>
               <p>
                 <input type="text" name="PartnerNum" ng-model="PartnerNum"
@@ -52,7 +53,7 @@
               </p>
             </form>
           </div>
-          <div id="link"><a href="login.html">Already a User? Sign in!</a></div>
+          <div id="link"></div>
         </div>
       </div>
     </div>
@@ -61,5 +62,6 @@
 <script src="js/jquery.min.js"></script> 
 <script src="js/bootstrap.min.js"></script> 
 <script src="js/loginregister.js"></script>
+<script src="js/email.js"></script>
 </body>
 </html>

@@ -44,8 +44,8 @@ $(document).ready(function () {
                  "client_secret": "eb59bdac73d3eec58706f9f2808666a69f8ff5a0c61fc541593236e80a7c1020",
                  "grant_type": "client_credentials"},
 			success: function(data){
-				console.log("Success");
-				console.log(data);
+				//console.log("Success");
+				//console.log(data);
 				//var json_obj = $.parseJSON(data);
 				auth.setToken(data.access_token);
    			 },
@@ -73,9 +73,16 @@ $(document).ready(function () {
 				console.log("Logged in");
 				console.log(data);
 				auth.setXToken(data.access_token);
+				window.location.href = "booking.html";
 			},
-			error: function(){
+			error: function(data){
 				console.log("Can't Log In");
+				console.log(data);
+				var obj = JSON.parse(JSON.stringify(data));
+				//console.log(obj);
+				console.log(obj['responseText']);
+				if(obj['responseText']=='{"message":"Invalid Username or Password."}'){
+					$('#pError').fadeIn(1000);}
 			}
 		});
 	 }
@@ -85,14 +92,19 @@ $(document).ready(function () {
 			url: "http://128.199.232.120/users",
 			method: "GET",
 			success: function(data){
-				console.log("Success");
-				console.log(JSON.stringify(data));
+				//console.log("Success");
+				//console.log(JSON.stringify(data));
 			}
 		});
 
 	 }
+	 
+	 function validateEmail(email) {
+    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+}
 
-	 function registerUser(e,f,l,p1,p2){
+	 function registerUser(e,f,l,p1,p2,ph,com){
 	 	$.ajax({
 			url: "http://128.199.232.120/users",
 			method: "POST",
@@ -102,16 +114,25 @@ $(document).ready(function () {
 					"first_name":f,
 					"last_name":l,
 					"password":p1,
-					"password_confirmation":p2}
+					"password_confirmation":p2,
+					"phone":ph,
+					"company": com}
 			},
 			success: function(data){
-				//console.log(data);
+				if(validateEmail(e)){
 				window.setTimeout(function() {
-    	window.location.href = "../postregister.html";
+    			window.location.href = "postregister.html";
 		});
+				}
+				sessionStorage.removeItem('email');
 			},
-			error: function(){
+			error: function(data){
 				console.log("Cannot create");
+				var obj = JSON.parse(JSON.stringify(data));
+				//console.log(obj);
+				//console.log(obj['responseText']);
+				if(obj['responseText']=='{"message":{"email":["has already been taken"]}}'){
+					$('#eError').fadeIn(1000);}
 			}
 		});
 	 }
@@ -129,7 +150,9 @@ $(document).ready(function () {
 	 	var lName=$('#lName').val();
 	 	var pass1=$('#rPass').val();
 	 	var pass2=$('#rPass2').val();
-		registerUser(email,fName,lName,pass1,pass2);
+		var phone = $('#pnumber').val();
+		var com = $('#com').val();
+		registerUser(email,fName,lName,pass1,pass2,phone,com);
 	});
 
 });

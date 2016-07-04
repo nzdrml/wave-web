@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -25,7 +26,7 @@
           <div id="subscribe"> 
             <!--Removed for now!--> 
           </div>
-          <!--Subscribe!--> 
+          <div class="row"><div class="col-sm-12 col-md-12"><input type="text" placeholder="E-mail" id="registerInput"><button type="submit" id="rSubmit">Register Now</button></div></div>
         </div>
         <!--Wave Text!--> 
       </div>
@@ -48,6 +49,8 @@
             <li><a href="#about">About</a></li>
             <li><a href="#howitworks">How it Works</a></li>
             <li><a href="#contact">Contact Us</a></li>
+            <li><a href="register.html" id="regLink">Register</a></li>
+            
           </ul>
           <!--Ul!--> 
         </div>
@@ -129,7 +132,7 @@
               <div class="tr">
                 <div class="td"><img src="img/icons/4.png"/>
                   <h3>Clean & Comfy</h3>
-                  <p>Wave ensures passengers to seat comfortably with enough legroom to boot.</p>
+                  <p>Wave ensures passengers comfortable seats with enough legroom to boot.</p>
                 </div>
                 <div class="td"><img src="img/icons/5.png"/>
                   <h3>On-Time Departure</h3>
@@ -184,7 +187,7 @@
           <div id="HDesc">
             <div id="d1">
               <h2><a>1. Join the Community</a></h2>
-              <p><a href="https://docs.google.com/forms/d/1Vp9F5wAOVV05ub5aLUKvHRCnCdNZJ_iW5iOeSP_U5Es/viewform">Register your personal details here</a> & sign up your organization to share Wave with your
+              <p><a href="register.html">Register your personal details here</a> & sign up your organization to share Wave with your
                 community.</p>
             </div>
             <!--D1!-->
@@ -197,7 +200,7 @@
             
             <div id="d3">
               <h2><a>3. Ride the Wave</a></h2>
-              <p>Simply wait for confirmation before on-boarding the vehicle.</p>
+              <p>Simply wait for confirmation before boarding on the vehicle.</p>
             </div>
             <!--D3!--> 
             <div class="clear"></div>
@@ -267,6 +270,7 @@
 <script src="js/scroll.js"></script> 
 <script src="js/jasny-bootstrap.min.js"></script> 
 <script src="js/waveside.js"></script>
+<script src="js/email.js"></script>
 <script>
 $(document).ready(function(){
 	$('#cSubmit').click(function(){
@@ -289,6 +293,8 @@ $(document).ready(function(){
 			return false;
 	});
 });
+
+
 </script>
 </body>
 </html>

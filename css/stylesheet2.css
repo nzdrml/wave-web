@@ -157,18 +157,18 @@ button{
 }
 
 @media(max-width:767px){
-	#name{
+	.name{
 	}
 }
 
 @media(min-width:768px){
-	#name{
+	.name{
 		width:123px;
 	}
 }
 
 @media(min-width:992px){
-	#name{
+	.name{
 		width:123px;
 	}
 }
@@ -180,4 +180,22 @@ button{
 
 .highlight{
 	border: 1px solid red;
+}
+
+input:focus{
+	border: none;
+}
+
+#redirect h1{
+	color:white;
+}
+
+
+#redirect a{
+	color:#CCC;
+}
+
+.error{
+	display:none;
+	color:#FFF;
 }

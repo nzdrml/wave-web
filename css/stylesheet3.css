@@ -114,3 +114,11 @@ body{
 #pad select{
 	border:none;
 }
+
+#logout{
+	color:#feaf52;
+}
+
+#logout:hover{
+	color:#8ccdf9;
+}
