@@ -33,11 +33,11 @@ body{
 	margin-right:auto;
 	background:#FFF;
 	border-radius:1%;
-	-webkit-box-shadow: 6px 4px 10px 5px rgba(0,0,0,0.76);
-	-moz-box-shadow: 6px 4px 10px 5px rgba(0,0,0,0.76);
-	box-shadow: 6px 4px 10px 5px rgba(0,0,0,0.76);
+	-webkit-box-shadow: 0px 0px 9px -1px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 0px 9px -1px rgba(0,0,0,0.75);
+	box-shadow: 0px 0px 9px -1px rgba(0,0,0,0.75);
 	margin-top:5%;
-	
+
 }
 
 #pad{
@@ -104,8 +104,9 @@ body{
 	width:20%;
 	border:none;
 	background:#8ccef9;
-	
+
 }
+
 
 #submit button:hover{
 	color:#fff;
@@ -113,6 +114,9 @@ body{
 
 #pad select{
 	border:none;
+	-webkit-box-shadow: 0px 0px 9px -1px rgba(184,184,184,1);
+-moz-box-shadow: 0px 0px 9px -1px rgba(184,184,184,1);
+box-shadow: 0px 0px 9px -1px rgba(184,184,184,1);
 }
 
 #logout{
@@ -121,4 +125,117 @@ body{
 
 #logout:hover{
 	color:#8ccdf9;
+}
+
+.main{
+	margin-top:60px;
+	position:relative;
+	height:100%;
+}
+
+.side{
+	position:absolute;
+	left:0;
+	width:20%;
+	background:#FFF;
+	font-size:20px;
+	height:auto;
+}
+
+.side ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.side li{
+	padding:10px;
+	height:50px;
+	color:#888;
+}
+
+.side a{
+	color:#888;
+	height:50px;
+	width:100%;
+}
+
+.side li a:hover{
+	color:#FFF;
+	text-decoration: none;
+}
+
+.side li:hover{
+	color:#FFF;
+	background:#feaf52;
+	text-decoration: none;
+}
+
+.side .selected{
+	color:#000;
+	text-decoration: none;
+}
+
+.contained{
+	background: #FFF;
+	position:absolute;
+	right:0;
+	width:75%;
+	padding:10px;
+}
+
+.waveselect{
+	width:100%;
+}
+
+.submitbutton{
+	width:100%;
+	border:none;
+	padding:5px;
+	background:#8ccdf9;
+}
+
+.submitbutton:hover{
+	color:#FFF;
+}
+
+#routes{
+	border:1px #CCC solid;
+	padding:5px;
+	position:relative;
+	display:none;
+}
+
+.a{
+	background: #8ccdf9;
+	margin:1px;
+}
+
+.b{
+	background: #FFF;
+	margin:1px;
+}
+
+.routeSelect{
+	color:#000;
+}
+
+.routeSelect a:{
+	color:#000;
+}
+
+.routeSelect:hover{
+	color:#000
+}
+
+.routeSelected{
+	background: #feaf52;
+}
+
+.a:hover,.b:hover{
+	background: #feaf52;
+}
+
+#googleMap{
+	width:auto;height:250px;
 }

@@ -98,11 +98,16 @@ $(document).ready(function () {
 		});
 
 	 }
-	 
+
 	 function validateEmail(email) {
     var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(email);
 }
+
+	function validatePhone(phone){
+		var re = /\(?09([0-9]{2})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/;
+		return re.test(phone);
+	}
 
 	 function registerUser(e,f,l,p1,p2,ph,com){
 	 	$.ajax({
@@ -119,7 +124,7 @@ $(document).ready(function () {
 					"company": com}
 			},
 			success: function(data){
-				if(validateEmail(e)){
+				if(validateEmail(e) && validatePhone(ph)){
 				window.setTimeout(function() {
     			window.location.href = "postregister.html";
 		});
@@ -127,6 +132,7 @@ $(document).ready(function () {
 				sessionStorage.removeItem('email');
 			},
 			error: function(data){
+				console.log(data);
 				console.log("Cannot create");
 				var obj = JSON.parse(JSON.stringify(data));
 				//console.log(obj);
@@ -149,10 +155,9 @@ $(document).ready(function () {
 	 	var fName=$('#fName').val();
 	 	var lName=$('#lName').val();
 	 	var pass1=$('#rPass').val();
-	 	var pass2=$('#rPass2').val();
 		var phone = $('#pnumber').val();
-		var com = $('#com').val();
-		registerUser(email,fName,lName,pass1,pass2,phone,com);
+		console.log(phone);
+		registerUser(email,fName,lName,pass1,pass1,phone,"NULL");
 	});
 
 });

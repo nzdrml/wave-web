@@ -20,33 +20,69 @@
           <div ng-app>
             <form name="Register">
               <p>
-                <input type="text" id="fName" class="name" name="fName" ng-model="fName" placeholder="First Name" ng-class="{highlight:Register.fName.$error.required && Register.fName.$touched}" required>
-                <input type="text" id="lName" class="name" name="lName" ng-model="lName" placeholder="Last Name" ng-class="{highlight:Register.lName.$error.required && Register.lName.$touched}" required>
+                <input
+                type="text"
+                id="fName"
+                class="name"
+                name="fName"
+                ng-model="fName"
+                placeholder="First Name"
+                ng-class="{highlight:Register.fName.$error.required && Register.fName.$touched}"
+                required>
+                <input
+                type="text"
+                id="lName"
+                class="name"
+                name="lName"
+                ng-model="lName"
+                placeholder="Last Name"
+                ng-class="{highlight:Register.lName.$error.required && Register.lName.$touched}"
+                required>
               </p>
               <p>
-                <input type="email" id="rEmail" name="email" ng-model="email" placeholder="E-mail" required ng-class="{highlight:Register.email.$error.required && Register.email.$dirty || Register.email.$error.email}" required>
+                <input
+                type="email"
+                id="rEmail"
+                name="email"
+                ng-model="email"
+                placeholder="E-mail"
+                required ng-class="{highlight:Register.email.$error.required && Register.email.$touched || Register.email.$error.email}"
+                required>
               </p>
               <p><div id="eError" class="error">Email already taken</div></p>
-                <input type="text" name="pnumber" id="pnumber" ng-model="pnumber" placeholder="Mobile Phone Number" ng-class="{highlight:Register.pnumber.$error.required && Register.pnumber.$touched || (Register.pnumber.$error.pattern || Register.pnumber.$error.minlength || Register.pnumber.$error.maxlength)}" ng-minlength="11" ng-maxlength="11" ng-pattern="/\(?09([0-9]{2})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/g" required>
+                <input
+                type="text"
+                name="pnumber"
+                id="pnumber"
+                ng-model="pnumber"
+                placeholder="Mobile Phone Number"
+                ng-class="{highlight:Register.pnumber.$error.required && Register.pnumber.$touched || (Register.pnumber.$error.pattern || Register.pnumber.$error.minlength || Register.pnumber.$error.maxlength)}"
+                ng-minlength="11"
+                ng-maxlength="11"
+                ng-pattern="/\(?09([0-9]{2})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/g"
+                required>
               </p>
               <span ng-show="Register.pnumber.$error.pattern">
               <p>Please input your 11 digit phone number.</p>
-              </span> 
+              </span>
               <p>
-                <input type="password" name="password" ng-model="password" id="rPass" ng-minlength="8" ng-class="{highlight:Register.password.$error.required && Register.password.$touched || (Register.password.$error.minlength || Register.password.$error.pattern)}"placeholder="Password" required ng-pattern="/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]/">
+                <input
+                type="password"
+                name="password"
+                ng-model="password"
+                id="rPass"
+                ng-minlength="8"
+                ng-class="{highlight:Register.password.$error.required && Register.password.$touched || (Register.password.$error.minlength}"
+                placeholder="Password">
               </p>
-              <p><span ng-show="Register.password.$error.minlength"> Password must be at least 8 characters long.</span></p>
-              <p><span ng-show="Register.password.$error.pattern" class="err"> Please have at least 1 uppercase character, 1 lowercase character, and 1 number.</span></p>
+              <p><span
+                ng-show="Register.password.$error.minlength"> Password must be at least 8 characters long.</span></p>
+              
               <p>
-                <input type="password" name="password2" id="rPass2" ng-model="password2" placeholder="Confirm Password"  ng-class="{highlight:password!=password2}" required>
-              </p>
-              <p><span ng-show="password2!=password">Passwords do not match</span></p>
-              <p>
-                <input type="text" name="COS" id="com" ng-model="COS" placeholder="Company/Organization/School" ng-class="{highlight:Register.COS.$error.required && Register.COS.$touched}" required>
+                
               </p>
               <p>
-                <input type="text" name="PartnerNum" ng-model="PartnerNum"
-                                      placeholder="Corporate Partner Code(Optional)">
+
               </p>
               <p>
                 <button type="submit" id="button2">Register</button>
@@ -59,8 +95,8 @@
     </div>
   </div>
 </div>
-<script src="js/jquery.min.js"></script> 
-<script src="js/bootstrap.min.js"></script> 
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
 <script src="js/loginregister.js"></script>
 <script src="js/email.js"></script>
 </body>
