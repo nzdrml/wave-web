@@ -204,19 +204,26 @@ box-shadow: 0px 0px 9px -1px rgba(184,184,184,1);
 	padding:5px;
 	position:relative;
 	display:none;
+	list-style-type: none;
 }
 
 .a{
 	background: #8ccdf9;
 	margin:1px;
+	padding:5px;
 }
 
 .b{
 	background: #FFF;
 	margin:1px;
+	padding:5px;
 }
 
-.routeSelect{
+#routes ul {
+	list-style-type: none;
+}
+
+.routeSelect li{
 	color:#000;
 }
 
@@ -238,4 +245,21 @@ box-shadow: 0px 0px 9px -1px rgba(184,184,184,1);
 
 #googleMap{
 	width:auto;height:250px;
+}
+
+#success{
+	text-align:center;
+}
+
+
+#oldTs,#newTs{
+	list-style-type: none;
+}
+
+#oldTs li, #newTs li{
+	padding:5px;
+}
+
+#oldTs li:hover,#newTs li:hover{
+	background: #feaf52;
 }
