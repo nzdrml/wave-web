@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Booking Screen</title>
+<link href="css/bootstrap-theme.min.css"  rel="stylesheet"/>
+<link href="css/bootstrap.min.css" rel="stylesheet"/>
+<link href="css/bootstrap-select.min.css" rel="stylesheet"/>
+<link rel="stylesheet" href="css/jasny-bootstrap.min.css"/>
+<link rel="stylesheet" href="css/stylesheet4.css"/>
+</head>
+<body>
+
+  <div class="container">
+    <div id="mainCon">
+
+    <nav class="navmenu navmenu-default navmenu-fixed-left offcanvas-sm" role="navigation" id="wavenav">
+  <div class="navmenu-brand">
+    <div class="navmenu-image"></div>
+  </div>
+
+  <ul class="nav navmenu-nav">
+    <li class="active"><a href="booking3.html">Booking</a></li>
+    <li><a href="currenttrips2.html">Current Trips</a></li>
+    <li><a href="triphistory2.html">Trip History</a></li>
+  </ul>
+</nav>
+    <!--topnav!-->
+    <div id="topNav">
+      <div id="navContainer">
+        <div id="navLogo"><a href=""><img src="img/logo2.png"/></a></div>
+        <div id="navLinks">
+          <ul>
+            <li><a href="">Welcome, User!</a></li>
+            <li><a href="" id="logout">Logout</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!--end top!-->
+    <!--Body!-->
+    <div id="bodyWrap">
+      <div id="bodyContainer">
+        <div id="googleMap"></div>
+        <div id="theForm">
+
+          <h3>Route:</h3>
+          <select class="selectpicker waveselect" id="pPoints">
+            <option disabled selected>Starting Point</option>
+          </select>
+          <ul id="routes">
+          </ul>
+
+          <div>
+            <h3>Date:</h3>
+            <input type="date" name="dates" id="date">
+          </div>
+
+          <div>
+            <h3>Time:</h3>
+            <select class="selectpicker" id="t1">
+              <option disabled select>Hour</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+            </select>
+            :
+            <select class="selectpicker" id="t2">
+              <option disabled select>Min</option>
+              <option value="00">00</option>
+              <option value="15">15</option>
+              <option value="30">30</option>
+              <option value="45">45</option>
+            </select>
+          </div>
+
+          <div>
+            <br/>
+            <button class="submitbutton" id="submitting">Book Ride</button>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--End body!-->
+    </div>
+
+<script src="http://maps.googleapis.com/maps/api/js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jasny-bootstrap.min.js"></script>
+<script src="js/booking.js"></script>
+<script src="js/bootstrap-select.min.js"></script>
+</body>
+</html>

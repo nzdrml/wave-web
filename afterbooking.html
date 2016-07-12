@@ -47,7 +47,7 @@
       <div class="side">
         <ul>
           <li><a href="Booking2.html" class="selected">Booking</a></li>
-          <li><a href="currentrips.html">Current Trips</a></li>
+          <li><a href="currenttrips.html">Current Trips</a></li>
           <li><a href="triphistory.html">Trip History</a></li>
         </ul>
       </div><!--Sidebar!-->
@@ -60,7 +60,7 @@
                 <div class="col-sm-12"><p>Your ride is now booked! Please remember to arrive on time</p></div>
               </div>
               <div class="row">
-                <div class="col-sm-12"><a href="">You are now being redirected...</a></div>
+                <div class="col-sm-12"><a href="booking2.html">You are now being redirected...</a></div>
               </div>
 
         </div>
@@ -72,6 +72,11 @@
   <script src="js/bootstrap.min.js"></script>
   <script src="js/booking.js"></script>
   <script src="js/bootstrap-select.min.js"></script>
-  <script src="http://maps.googleapis.com/maps/api/js"></script>
+  <script>
+  window.setTimeout(function() {
+      window.location.href = "booking2.html";
+  }, 5000);
+  </script>
+
 </body>
 </html>

@@ -1,0 +1,258 @@
+@charset "UTF-8";
+/* CSS Document */
+@font-face{
+	font-family: quicksand;
+	src:url(../fonts/quicksand/Quicksand_Book.otf);
+}
+
+@font-face{
+	font-family: quicksand;
+	src:url(../fonts/quicksand/Quicksand_Bold.otf);
+	font-weight: bold;
+}
+
+@font-face{
+	font-family: quicksand;
+	src:url(../fonts/quicksand/Quicksand_Light.otf);
+	font-weight: 100;
+}
+
+@font-face{
+	font-family: quicksand;
+	src:url(../fonts/quicksand/Quicksand_Book_Oblique.otf);
+	font-style: italic;
+}
+
+#wavenav{
+  height:100%;
+  position:absolute;
+  left:0;
+  border:none;
+  border-radius:0px;
+  width:15%;
+}
+
+.navmenu-image{
+  background:#CCC;
+  border-radius:100%;
+  height:100px;
+  width:100px;
+  margin:0 auto;
+  border: 5px #8ccdf9 solid;
+}
+
+.navmenu-default .navmenu-nav>.active>a, .navbar-default .navbar-offcanvas .navmenu-nav>.active>a,  .navmenu-default .navmenu-nav>.active>a:focus, .navbar-default .navbar-offcanvas .navmenu-nav>.active>a:focus{
+  background:#000;
+  color:#8ccdf9 ;
+  font: 15px quicksand;
+  font-weight:bold;
+}
+
+.navmenu-default .navmenu-nav>.active>a:hover,.navbar-default .navbar-offcanvas .navmenu-nav>.active>a:hover{
+  color:#feaf52;
+  background:#000;
+  font: 15px quicksand;
+  font-weight:bold;
+}
+
+.navmenu-default .navmenu-nav>li>a, .navbar-default .navbar-offcanvas .navmenu-nav>li>a {
+    color: #FFF;
+    font: 15px quicksand;
+    font-weight:bold;
+}
+
+.navmenu-default .navmenu-nav>li>a:hover, .navbar-default .navbar-offcanvas .navmenu-nav>li>a:hover {
+    color:#8ccdf9 ;
+}
+
+
+#topNav{
+  height:10%;
+  width:85%;
+  position:absolute;
+  top:0;
+  left:15%;
+  background-color: #111;
+  border-left:10px solid #000;
+  border-bottom:3px solid #000;
+}
+
+#bodyWrap{
+  height:90%;
+  width:85%;
+  background-color:#EEE;
+  position:absolute;
+  top:10%;
+  left:15%;
+
+}
+
+#navContainer{
+  position:relative;
+  padding:20px;
+}
+
+#navLogo{
+  postion:absolute;
+  left:0;
+}
+
+#navLinks{
+  position:absolute;
+  right:3%;
+  bottom:3%;
+}
+
+#navLinks ul li{
+  display:inline;
+  list-style: none;
+  padding-left:10px;
+}
+
+#navLinks a{
+  color:#FFF;
+  font: 15px quicksand;
+  font-weight: bold;
+}
+
+#navLinks a:hover{
+  text-decoration: none;
+  color:#8ccdf9;
+}
+
+a#logout{
+  color:#feaf52;
+}
+
+
+#bodyContainer{
+  width:100%;
+  height:100%;
+  position:relative;
+}
+
+#googleMap{
+  width:75%;
+  height:100%;
+  position:absolute;
+  left:0;
+}
+
+#theForm{
+  width:25%;
+  height:100%;
+  background:#EEE;
+  position:absolute;
+  left:75%;
+  padding:10px;
+}
+
+.waveselect{
+	width:100%;
+}
+
+.dropdown-menu{
+  width:100%;
+  overflow-x:inherit;
+}
+
+#routes{
+  max-height:50%;
+  overflow-y: scroll;
+}
+
+#routes{
+	border:1px #CCC solid;
+	padding:5px;
+	position:relative;
+	display:none;
+	list-style-type: none;
+  background:#FFF;
+}
+
+.a{
+	background: #8ccdf9;
+	margin:1px;
+	padding:5px;
+}
+
+.b{
+	background: #FFF;
+	margin:1px;
+	padding:5px;
+}
+
+.c{
+	background: #FFF;
+	margin:1px;
+	padding:5px;
+  font-weight:bold;
+}
+
+#routes ul {
+	list-style-type: none;
+}
+
+.routeSelect li{
+	color:#000;
+}
+
+.routeSelect a:{
+	color:#000;
+}
+
+.routeSelect:hover{
+	color:#000
+}
+
+.routeSelected{
+	background: #feaf52;
+}
+
+.a:hover,.b:hover{
+	background: #feaf52;
+}
+
+
+.submitbutton{
+	width:100%;
+	border:none;
+	padding:5px;
+	background:#8ccdf9;
+}
+
+.submitbutton:hover{
+	color:#FFF;
+}
+
+#success{
+  position:absolute;
+  top:25%;
+  bottom:25%;
+  left:0;
+  right:0;
+  text-align:center;
+  background:#FFF;
+  border: 1px #CCC solid;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+#pastTrips{
+  padding:5%;
+  overflow-y:auto;
+}
+
+#oldTs,#newTs{
+	list-style-type: none;
+}
+
+#oldTs li, #newTs li{
+	padding:5px;
+  border:1px solid #CCC;
+  background:#FFF;
+}
+
+#oldTs li:hover,#newTs li:hover{
+	background: #feaf52;
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Booking Screen</title>
+<link href="css/bootstrap-theme.min.css"  rel="stylesheet"/>
+<link href="css/bootstrap.min.css" rel="stylesheet"/>
+<link href="css/bootstrap-select.min.css" rel="stylesheet"/>
+<link rel="stylesheet" href="css/jasny-bootstrap.min.css"/>
+<link rel="stylesheet" href="css/stylesheet4.css"/>
+</head>
+<body>
+
+  <div class="container">
+    <div id="mainCon">
+
+    <nav class="navmenu navmenu-default navmenu-fixed-left offcanvas-sm" role="navigation" id="wavenav">
+  <div class="navmenu-brand">
+    <div class="navmenu-image"></div>
+  </div>
+
+  <ul class="nav navmenu-nav">
+    <li class="active"><a href="booking3.html">Booking</a></li>
+    <li><a href="currenttrips2.html">Current Trips</a></li>
+    <li><a href="triphistory2.html">Trip History</a></li>
+  </ul>
+</nav>
+    <!--topnav!-->
+    <div id="topNav">
+      <div id="navContainer">
+        <div id="navLogo"><a href=""><img src="img/logo2.png"/></a></div>
+        <div id="navLinks">
+          <ul>
+            <li><a href="">Welcome, User!</a></li>
+            <li><a href="" id="logout">Logout</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!--end top!-->
+    <!--Body!-->
+    <div id="bodyWrap">
+      <div id="bodyContainer">
+
+        <div id="success">
+          <div id="inner-success">
+            <h1>Success!</h1>
+            <p>Your ride is now booked! Please remember to arrive on time</p>
+            <p><a href="booking2.html">You are now being redirected...</a></p>
+          </div>
+        </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--End body!-->
+    </div>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jasny-bootstrap.min.js"></script>
+<script src="js/bootstrap-select.min.js"></script>
+<script>
+window.setTimeout(function() {
+    window.location.href = "booking3.html";
+}, 5000);
+</script>
+</body>
+</html>
