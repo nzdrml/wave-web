@@ -37,7 +37,8 @@ function trueRequestFunction() {
        },
     error: function(){
       console.log("Nope");
-    }
+    },
+    async:false
 
        });
 
@@ -163,6 +164,7 @@ function trueRequestFunction() {
 
         var month = dtToday.getMonth() + 1;
         var day = dtToday.getDate() +7;
+        var day2 = dtToday.getDate() +1;
         var year = dtToday.getFullYear();
         if(month < 10)
             month = '0' + month.toString();
@@ -170,7 +172,10 @@ function trueRequestFunction() {
             day = '0' + day.toString();
 
         var maxDate = year + '-' + month + '-' + day;
+        var minDate = year + '-' + month + '-' + day2;
         $('#date').attr('max', maxDate);
+        $('#date').attr('min',minDate);
+        $('#date').attr('value',minDate);
     });
 
 
@@ -199,9 +204,10 @@ $(document).ready(function () {
     document.getElementById("routes").innerHTML = ''
     document.getElementById("routes").innerHTML += '<li class="c">\
     <div class="row">\
-      <div class="col-sm-4">Origin</div>\
+      <div class="col-sm-3">Origin</div>\
       <div class="col-sm-4">Destination</div>\
-      <div class="col-sm-4">Cost</div>\
+      <div class="col-sm-2">Price</div>\
+      <div class="col-sm-3">Time</div>\
     </div></li>'
 
     for(var i in myRoutes){
@@ -213,9 +219,10 @@ $(document).ready(function () {
             data-cost="'+myRoutes[i].price+'" data-ocoo="'+myPoints[(myRoutes[i].origin_id)-1].coordinates+'" \
             data-dcoo="'+myPoints[(myRoutes[i].destination_id)-1].coordinates+'">\
             <div class="row">\
-              <div class="col-sm-4">'+myPoints[(myRoutes[i].origin_id)-1].name+'</div>\
+              <div class="col-sm-3">'+myPoints[(myRoutes[i].origin_id)-1].name+'</div>\
               <div class="col-sm-4">'+myPoints[(myRoutes[i].destination_id)-1].name+'</div>\
-              <div class="col-sm-4">'+myRoutes[i].price+'</div>\
+              <div class="col-sm-2">'+myRoutes[i].price+'</div>\
+              <div class="col-sm-3">'+myRoutes[i].time.substring(12,16)+'</div>\
             </div></li>'
 
           }
@@ -225,9 +232,10 @@ $(document).ready(function () {
             data-cost="'+myRoutes[i].price+'" data-ocoo="'+myPoints[(myRoutes[i].origin_id)-1].coordinates+'" \
             data-dcoo="'+myPoints[(myRoutes[i].destination_id)-1].coordinates+'">\
             <div class="row">\
-              <div class="col-sm-4">'+myPoints[(myRoutes[i].origin_id)-1].name+'</div>\
+              <div class="col-sm-3">'+myPoints[(myRoutes[i].origin_id)-1].name+'</div>\
               <div class="col-sm-4">'+myPoints[(myRoutes[i].destination_id)-1].name+'</div>\
-              <div class="col-sm-4">'+myRoutes[i].price+'</div>\
+              <div class="col-sm-2">'+myRoutes[i].price+'</div>\
+              <div class="col-sm-3">'+myRoutes[i].time.substring(12,16)+'</div>\
             </div></li>'
           }
 
