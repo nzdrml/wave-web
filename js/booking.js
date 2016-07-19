@@ -45,19 +45,6 @@ function trueRequestFunction() {
 
    }
 
-   $.ajaxSetup({
-         headers: {
-             Authorization:"Bearer "+ auth.getToken(),
- 			"X-Authorization": auth.getXToken()
-         },
-         beforeSend: function(jqXHR, request) {
-             if (request.url.indexOf("oauth/token") > -1 ){
-                 return true;
-             }
-             return auth.isAuthenticated();
-         }
-     });
-
      function getPoints(){
    		$.ajax({
    			url: "http://128.199.232.120/points",
@@ -137,7 +124,8 @@ function trueRequestFunction() {
         error: function(data){
           console.log("error");
           console.log(JSON.stringify(data));
-        }
+        },
+        async:false
       });
     }
 
@@ -150,11 +138,23 @@ function trueRequestFunction() {
 
       map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
 
+      var img = 'img/Markers/1.png';
+      var img2 = 'img/Markers/3.png';
       for (var i = 0; i < 2; i++) {
-        var marker=new google.maps.Marker({
-          position:new google.maps.LatLng(maplat[i].split(',')[0],maplat[i].split(',')[1]),
-          map:map
-        });
+        if(i%2==0){
+          var marker=new google.maps.Marker({
+            position:new google.maps.LatLng(maplat[i].split(',')[0],maplat[i].split(',')[1]),
+            map:map,
+            icon: img2
+          });
+        }
+        else{
+          var marker=new google.maps.Marker({
+            position:new google.maps.LatLng(maplat[i].split(',')[0],maplat[i].split(',')[1]),
+            map:map,
+            icon: img
+          });
+        }
       }
 
     }
@@ -186,9 +186,24 @@ $(document).ready(function () {
   cost='';
   oco='';
   dco='';
-  maplat=["12.8797,121.7740"];
+  maplat=["14.5995,120.9842"];
   var map;
 	trueRequestFunction();
+
+  $.ajaxSetup({
+        headers: {
+            Authorization:"Bearer "+ auth.getToken(),
+     "X-Authorization": auth.getXToken()
+        },
+        beforeSend: function(jqXHR, request) {
+            if (request.url.indexOf("oauth/token") > -1 ){
+                return true;
+            }
+            return auth.isAuthenticated();
+        },
+        async: false
+    });
+
 	getPoints();
   getRoutes();
   google.maps.event.addDomListener(window, 'load', initialize);
@@ -245,6 +260,7 @@ $(document).ready(function () {
 
 
     routes = document.getElementsByClassName('routeSelect');
+	var img = '';
       for (var i = 0; i < routes.length; i++) {
         routes[i].addEventListener('click',selectFunction,false);
       }

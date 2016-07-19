@@ -68,7 +68,8 @@ function trueRequestFunction() {
       console.log(obj['responseText']);
       if(obj['responseText']=='{"message":"Invalid Username or Password."}'){
         $('#pError').fadeIn(1000);}
-    }
+    },
+    async:false;
   });
  }
 
@@ -124,7 +125,8 @@ function trueRequestFunction() {
       //console.log(obj['responseText']);
       if(obj['responseText']=='{"message":{"email":["has already been taken"]}}'){
         $('#eError').fadeIn(1000);}
-    }
+    },
+    async:false;
   });
  }
 
