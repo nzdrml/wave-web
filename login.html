@@ -20,12 +20,27 @@
                     <div id="logo"></div>
                 </a>
                 <div ng-app="">
-                    <p><input type="text" name="username" ng-model="username" id="lEmail" placeholder="Email"></p>
-                    <p><input type="password" name="password" ng-model="password" id="lPass" placeholder="Password"></p>
-                    <p>
-                        <button type="submit" id="button1">Login</button>
-                        <div id="pError" class="error">Invalid username or password</div>
-                    </p>
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <p><input type="text" name="username" ng-model="username" id="lEmail" placeholder="Email"></p>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <p><input type="password" name="password" ng-model="password" id="lPass" placeholder="Password"></p>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <p>
+                          <button type="submit" id="button1">Login</button>
+                          <div id="pError" class="error">Invalid username or password</div>
+                      </p>
+                    </div>
+                  </div>
+                  
                 </div>
                 <div id="link"><a href="register.html">Not a User? Register Now!</a></div>
             </div>

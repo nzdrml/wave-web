@@ -180,6 +180,8 @@ function trueRequestFunction() {
 
 
 $(document).ready(function () {
+  $('#myModal').modal('show');
+  var app = angular.module('myModule', ['ngAutocomplete']);
   myPoints=[];
   myRoutes=[];
   id ='';
@@ -279,6 +281,10 @@ $('#submitting').click(function(){
   bookingFunction(pP,sched);
 });
 
-
+$('#modalSubmit').click(function(e){
+  e.preventDefault();
+  $('#modalIn').fadeOut(1000);
+  $('#modalSuccess').fadeIn(1000);
+});
 
 });

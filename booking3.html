@@ -11,6 +11,50 @@
 </head>
 <body>
 
+  <!--Modal box!-->
+  <div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">RideWave is looking for Route Suggestions!</h4>
+      </div>
+      <div class="modal-body">
+
+        <div ng-controller="locations" ng-app="myApp">
+          <form id="modalform" role="form">
+              <div id="modalIn">
+                <div>
+                  <input type="text" id="AutoCompletePickup" class="form-control" ng-autocomplete ng-model="autocomplete" options="options" details="details" placeholder="Pick-Up"/>
+                </div>
+
+                <div>
+                  <input type="text" id="AutoCompleteDropOff" class="form-control" ng-autocomplete ng-model="autocomplete" options="options" details="details" placeholder="Drop-Off"/>
+                </div>
+
+                <div>
+                  <button id="modalSubmit">Suggest Your Route</button>
+                </div>
+              </div>
+
+              <div id="modalSuccess">
+                <h2>Thank you for your suggestion!</h2>
+              </div>
+          </form>
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+  <!--Modal Box!-->
+
   <div class="container">
     <div id="mainCon">
 
@@ -69,7 +113,8 @@
   <!--End body!-->
     </div>
 
-<script src="http://maps.googleapis.com/maps/api/js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/jasny-bootstrap.min.js"></script>
