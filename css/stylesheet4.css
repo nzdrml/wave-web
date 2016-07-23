@@ -69,20 +69,54 @@
 
 #topNav{
   height:10%;
-  width:85%;
   position:absolute;
   top:0;
   left:15%;
   background-color: #140f4a;
 }
 
+
+@media(max-width:767px){
+	#topNav{
+		width:100%;
+		left:0;
+	}
+
+	#bodyWrap{
+		width:100%;
+		left:0;
+	}
+}
+@media(min-width:768px){
+	#topNav{
+		width:100%;
+		left:0;
+	}
+
+	#bodyWrap{
+		width:100%;
+		left:0;
+	}
+
+}
+@media(min-width:992px){
+	#topNav{
+		width:85%;
+		left:15%;
+	}
+
+	#bodyWrap{
+		width:85%;
+		left:15%;
+	}
+}
+
+
 #bodyWrap{
   height:90%;
-  width:85%;
   background-color:#EEE;
   position:absolute;
   top:10%;
-  left:15%;
 
 }
 
@@ -259,6 +293,9 @@ a#logout{
 .modal {
   text-align: center;
   padding: 0!important;
+	background: transparent;
+	opacity: .0;
+  filter: alpha(opacity=0);
 }
 
 .modal:before {

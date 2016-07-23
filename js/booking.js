@@ -136,6 +136,11 @@ function trueRequestFunction() {
         mapTypeId: google.maps.MapTypeId.ROADMAP
       };
 
+      var input = document.getElementById('AutoCompletePickup');
+      var input2 = document.getElementById('AutoCompleteDropOff');
+      var autocomplete = new google.maps.places.Autocomplete(input);
+      var autocomplete2 = new google.maps.places.Autocomplete(input2);
+
       map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
 
       var img = 'img/Markers/1.png';
@@ -180,8 +185,9 @@ function trueRequestFunction() {
 
 
 $(document).ready(function () {
+  var app = angular.module('myModule', ['ng-Autocomplete']);
+  google.maps.event.addDomListener(window, 'load', initialize);
   $('#myModal').modal('show');
-  var app = angular.module('myModule', ['ngAutocomplete']);
   myPoints=[];
   myRoutes=[];
   id ='';
@@ -208,7 +214,7 @@ $(document).ready(function () {
 
 	getPoints();
   getRoutes();
-  google.maps.event.addDomListener(window, 'load', initialize);
+
 
 
     for(var i in myPoints){
