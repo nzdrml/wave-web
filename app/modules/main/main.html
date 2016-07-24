@@ -1,0 +1,99 @@
+<div class="wrapper">
+    <header class="main-header">
+        <a class="logo" ui-sref="main.dashboard"><span class="logo-mini"><b>W</b>Ad</span> <span class="logo-lg"><b>RideWave</b>Admin</span></a>
+        <nav class="navbar navbar-static-top" role="navigation">
+            <a class="sidebar-toggle" data-toggle="offcanvas" role="button"><span class="sr-only">Toggle navigation</span></a>
+        </nav>
+    </header>
+    <aside class="main-sidebar">
+        <section class="sidebar">
+            <div class="user-panel">
+                <div class="pull-left image"><img alt="User Image" class="img-circle" src="/img/admin/user2-160x160.jpg"></div>
+                <div class="pull-left info">
+                    <p>Welcome User!</p>
+                </div>
+            </div>
+            <form action="#" class="sidebar-form" method="get">
+                <div class="input-group">
+                    <input class="form-control" name="q" placeholder="Search..." type="text"> <span class="input-group-btn"><button class="btn btn-flat" id="search-btn" name="search" type="submit"><span class="input-group-btn"><span class="input-group-btn"><span class="input-group-btn"><i class="fa fa-search"></i></span></span></span></button></span>
+                </div>
+            </form>
+            <ul class="sidebar-menu">
+                <li class="header">HEADER</li>
+                <li ui-sref-active="active">
+                    <a ui-sref=".bookings"><i class="fa fa-link"></i> <span>Booking</span></a>
+                </li>
+                <li class="treeview" ui-sref-active="active">
+                    <a href=""><i class="fa fa-link"></i> <span>Trip</span> <i class="fa fa-angle-left pull-right"></i></a>
+                    <ul class="treeview-menu">
+                        <li>
+                            <a ui-sref="main.trips()">Current</a>
+                        </li>
+                        <li>
+                            <a ui-sref="main.trips.history()">History</a>
+                        </li>
+                    </ul>
+                </li>
+                <li ui-sref-active="active">
+                    <a ng-click="main.logout()"><i class="fa fa-link"></i> <span>Logout</span></a>
+                </li>
+            </ul>
+        </section>
+    </aside>
+    <div class="content-wrapper">
+        <div ui-view></div>
+    </div>
+    <footer class="main-footer">
+        <div class="pull-right hidden-xs">
+            Anything you want
+        </div><strong>Copyright &copy; 2015 <a href="#">Company</a>.</strong> All rights reserved.
+    </footer>
+    <aside class="control-sidebar control-sidebar-dark">
+        <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
+            <li class="active">
+                <a data-toggle="tab" href="#control-sidebar-home-tab"><i class="fa fa-home"></i></a>
+            </li>
+            <li>
+                <a data-toggle="tab" href="#control-sidebar-settings-tab"><i class="fa fa-gears"></i></a>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane active" id="control-sidebar-home-tab">
+                <h3 class="control-sidebar-heading">Recent Activity</h3>
+                <ul class="control-sidebar-menu">
+                    <li>
+                        <a href="javascript;"><i class="menu-icon fa fa-birthday-cake bg-red"></i>
+                            <div class="menu-info">
+                                <h4 class="control-sidebar-subheading">Langdon's Birthday</h4>
+                                <p>Will be 23 on April 24th</p>
+                            </div></a>
+                    </li>
+                </ul>
+                <h3 class="control-sidebar-heading">Tasks Progress</h3>
+                <ul class="control-sidebar-menu">
+                    <li>
+                        <a href="javascript;">
+                            <h4 class="control-sidebar-subheading">Custom Template Design <span class="label label-danger pull-right">70%</span></h4>
+                            <div class="progress progress-xxs">
+                                <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
+                            </div></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="tab-pane" id="control-sidebar-stats-tab">
+                Stats Tab Content
+            </div>
+            <div class="tab-pane" id="control-sidebar-settings-tab">
+                <form method="post">
+                    <h3 class="control-sidebar-heading">General Settings</h3>
+                    <div class="form-group">
+                        <label class="control-sidebar-subheading">Report panel usage <input checked class="pull-right" type="checkbox"></label>
+                        <p>Some information about this general settings option</p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </aside>
+    <div class="control-sidebar-bg"></div>
+    <div growl></div>
+</div>

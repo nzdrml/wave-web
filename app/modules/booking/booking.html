@@ -1,0 +1,170 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <h1>
+        Bookings
+    </h1>
+    <ol class="breadcrumb">
+        <li><a ui-sref="main.dashboard"><i class="fa fa-dashboard"></i> Bookings</a>
+        </li>
+    </ol>
+</section>
+
+<!-- Main content -->
+<section class="content" id="booking">
+    <div class="row">
+        <div class="col-sm-12">
+            <!-- Map box -->
+            <div class="box box-solid">
+                <div class="box-header ui-sortable-handle" style="cursor: move;">
+                    <i class="fa fa-map-marker"></i>
+                    <h3 class="box-title">
+                        Map
+                    </h3>
+                </div>
+                <div class="box-body">
+                    <ui-gmap-google-map pan="true"
+                                        center='booking.map.center'
+                                        zoom='booking.map.zoom'
+                                        bounds="booking.map.bounds"
+                                        events="booking.map.events">
+                        <ui-gmap-markers models="booking.markers" coords="'self'" icon="'icon'" fit="true">
+                        </ui-gmap-markers>
+                    </ui-gmap-google-map>
+                </div>
+                <!-- /.box-body-->
+                <div class="box-footer no-border">
+                    <!--<div class="row">-->
+                    <!--<div class="col-xs-4 text-center" style="border-right: 1px solid #f4f4f4">-->
+                    <!--<div id="sparkline-1">-->
+                    <!--<canvas width="80" height="50"-->
+                    <!--style="display: inline-block; width: 80px; height: 50px; vertical-align: top;"></canvas>-->
+                    <!--</div>-->
+                    <!--<div class="knob-label">Visitors</div>-->
+                    <!--</div>-->
+                    <!--&lt;!&ndash; ./col &ndash;&gt;-->
+                    <!--<div class="col-xs-4 text-center" style="border-right: 1px solid #f4f4f4">-->
+                    <!--<div id="sparkline-2">-->
+                    <!--<canvas width="80" height="50"-->
+                    <!--style="display: inline-block; width: 80px; height: 50px; vertical-align: top;"></canvas>-->
+                    <!--</div>-->
+                    <!--<div class="knob-label">Online</div>-->
+                    <!--</div>-->
+                    <!--&lt;!&ndash; ./col &ndash;&gt;-->
+                    <!--<div class="col-xs-4 text-center">-->
+                    <!--<div id="sparkline-3">-->
+                    <!--<canvas width="80" height="50"-->
+                    <!--style="display: inline-block; width: 80px; height: 50px; vertical-align: top;"></canvas>-->
+                    <!--</div>-->
+                    <!--<div class="knob-label">Exists</div>-->
+                    <!--</div>-->
+                    <!--&lt;!&ndash; ./col &ndash;&gt;-->
+                    <!--</div>-->
+                </div>
+            </div>
+            <!-- /.box -->
+        </div>
+        <div class="col-sm-6">
+            <div class="box">
+                <div class="box-header">
+                    Departure Point
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <ui-select ng-model="booking.form.origin">
+                        <ui-select-match class="ui-select-match">
+                            <span ng-bind="$select.selected.name"></span>
+                        </ui-select-match>
+                        <ui-select-choices class="ui-select-choices"
+                                           repeat="point in (booking.points | filter: $select.search) track by point.id">
+                            <span ng-bind="point.name"></span>
+                        </ui-select-choices>
+                    </ui-select>
+                </div>
+            </div>
+            <div class="box" id="origin">
+                <div class="box-header">
+                    Routes
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body table-responsive no-padding">
+                    <table class="table table-hover">
+                        <tbody>
+                        <tr>
+                            <th>Destination</th>
+                            <th>Price</th>
+                            <th>Time</th>
+                        </tr>
+                        <tr dir-paginate="route in booking.dests | itemsPerPage: booking.pagination.maxItems track by route.id"
+                            ng-click="booking.setDest(route)">
+                            <td>{{ booking.findPoint(route.destination_id).name }}</td>
+                            <td>{{route.price | currency}}</td>
+                            <td><span class="label label-success">{{route.id}}</span></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="box-footer">
+                    <dir-pagination-controls></dir-pagination-controls>
+                </div>
+                <!-- /.box-body -->
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Summary</h3>
+                </div>
+                <!-- /.box-header -->
+                <!-- form start -->
+                <form role="form" id="booking-summary" class="form-horizontal" ng-submit="booking.createBooking()">
+                    <div class="box-body">
+                        <div class="form-group">
+                            <label for="originPoint" class="col-sm-3 control-label">Origin</label>
+                            <div class="col-sm-9">
+                                <input ng-model="booking.form.origin.name" type="text" class="form-control" id="originPoint" placeholder="Departure Point" ng-required="true" ng-disabled="true">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="destinationPoint" class="col-sm-3 control-label">Destination</label>
+                            <div class="col-sm-9">
+                                <input ng-model="booking.form.destination.name" type="text" class="form-control" id="destinationPoint" placeholder="Destination Point" ng-required="true" ng-disabled="true">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Price</label>
+                            <div class="col-sm-9">
+                                <div class="input-group">
+                                    <span class="input-group-addon">Php</span>
+                                    <input type="text" class="form-control" ng-model="booking.form.route.price" ng-required="true" ng-disabled="true">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Time</label>
+                            <div class="col-sm-9">
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <i class="fa fa-clock-o"></i>
+                                    </div>
+                                    <input id="routeTime" data-toggle="dropdown" type="text" class="form-control pull-right active" ng-model="booking.form.schedule" ng-required="true">
+                                    <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                                        <datetimepicker data-ng-model="booking.form.schedule"
+                                                        data-datetimepicker-config="{ dropdownSelector: '#routeTime', modelType: 'MMM DD, YYYY HH:mm a' }">
+
+                                        </datetimepicker>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.box-body -->
+
+                    <div class="box-footer">
+                        <button type="submit" class="btn btn-primary">Book</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- /.content -->

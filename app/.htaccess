@@ -1,0 +1,42 @@
+# RewriteEngine on
+# RewriteCond %{REQUEST_FILENAME} !-d
+# RewriteCond %{REQUEST_FILENAME}\.html -f
+# RewriteRule ^(.*)$ $1.html
+
+# <IfModule mod_rewrite.c>
+#     Options +FollowSymlinks
+#     RewriteEngine On
+#     RewriteCond %{REQUEST_FILENAME} -d
+#     # Don't rewrite files or directories
+#     RewriteCond %{REQUEST_FILENAME} -f [OR]
+#     RewriteRule ^ - [L]
+#
+#     # Rewrite everything else to index.html to allow html5 state links
+#     RewriteRule ^ index.html [L]
+# </IfModule>
+
+# FallbackResource index.html
+
+# RewriteEngine On
+# Options FollowSymLinks
+#
+# RewriteBase /
+#
+# RewriteCond %{REQUEST_FILENAME} !-f
+# RewriteCond %{REQUEST_FILENAME} !-d
+# RewriteRule ^(.*)$ /#/$1 [L]
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    #RewriteBase /relative/web/path/
+
+    RewriteCond %{REQUEST_FILENAME} -f [OR]
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^(.+) - [PT,L]
+
+    RewriteCond %{REQUEST_URI} !=/favicon.ico
+    RewriteRule ^(.*) index.html
+
+    RewriteCond %{HTTP:Authorization}  !^$
+    RewriteRule .* - [E=REMOTE_USER:%{HTTP:Authorization}]
+</IfModule>

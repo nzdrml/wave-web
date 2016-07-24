@@ -1,0 +1,182 @@
+
+#register {
+  height: 100vh;
+  width: 100%;
+
+  #Main {
+    background: url(../img/bg3.jpg);
+    display: table;
+    position: relative;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    width: 100%;
+    min-height: 100%;
+    overflow: inherit;
+  }
+
+  #Box {
+    text-align: center;
+    font: 12px quicksand;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%)
+  }
+
+  #logo {
+    background: url(../img/logo.png);
+    height: 100px;
+    width: 150px;
+    background-size: cover;
+    margin: 0 auto;
+    margin-bottom: 5%;
+
+    display: inline-block;
+    -webkit-transition-duration: .5s;
+    transition-duration: .5s;
+    -webkit-transition-property: -webkit-transform;
+    transition-property: transform;
+    -webkit-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    transform: translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+
+  }
+
+  #logo:hover {
+    -webkit-transform: translateY(-3px);
+    -ms-transform: translateY(-3px);
+    transform: translateY(-3px);
+    -webkit-animation-name: hover;
+    animation-name: hover;
+    -webkit-animation-duration: 1.5s;
+    animation-duration: 1.5s;
+    -webkit-animation-delay: 0.3s;
+    animation-delay: 0.3s;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
+  }
+
+  #Box p {
+    color: #fff;
+  }
+
+  input[type="checkbox"] {
+    height: 20px;
+    width: 20px;
+    background-color: rgba(65, 67, 69, 0.5);
+  }
+
+  input {
+    background-color: rgba(65, 67, 69, 0.5);
+    border: #FFF 1px solid;
+    height: 40px;
+    width: 100%;
+    padding: 5px;
+    color: #FFF;
+    font: 14px quicksand;
+  }
+
+  input, textarea {
+    color: #fff;
+  }
+
+  input[type] {
+    color: white;
+  }
+
+  input[type]:focus {
+    color: #8ccef9;
+  }
+
+  button {
+    background: #8ccef9;
+    width: 100%;
+    height: 30px;
+    border: 1px solid #fff;
+    color: #000;
+    font: 15px quicksand;
+  }
+
+  button:hover {
+    color: #FFF;
+  }
+
+  #button {
+    text-transform: uppercase;
+    padding-top: 5px;
+    color: #000;
+  }
+
+  #button:hover {
+    color: #FFF;
+  }
+
+  #link {
+    padding-top: 3%;
+  }
+
+  #link a {
+    color: #FFF;
+    text-decoration: none;
+    letter-spacing: 3px;
+
+  }
+
+  #link a:hover {
+    font-style: italic;
+  }
+
+  @media(max-width: 767px) {
+    #Box {
+      width: 90%;
+    }
+  }
+
+  @media(min-width: 768px) {
+    #Box {
+      width: 30%;
+    }
+  }
+
+  @media(min-width: 992px) {
+    #Box {
+      width: 30%;
+    }
+  }
+
+  #validation {
+    color: #8CCEF9;
+  }
+
+  .highlight {
+    border: 1px solid red;
+  }
+
+  input:focus {
+    border: none;
+  }
+
+  #redirect h1 {
+    color: white;
+  }
+
+  #redirect a {
+    color: #CCC;
+  }
+
+  .error {
+    display: none;
+    color: #FFF;
+  }
+
+}

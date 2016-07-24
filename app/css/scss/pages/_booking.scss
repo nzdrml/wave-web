@@ -1,0 +1,23 @@
+#booking{
+  #origin{
+    .box-body{
+      height: 230px;
+
+      tr{
+        cursor: pointer;
+      }
+    }
+
+    .box-footer{
+      .pagination{
+        margin: 10px 0;
+      }
+    }
+  }
+}
+
+#booking-summary{
+  .box-body{
+    min-height: 400px;
+  }
+}

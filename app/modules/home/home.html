@@ -1,0 +1,226 @@
+<div id="wrap">
+    <header id="Home">
+        <div class="container-fluid">
+            <div class="text-vcenter"><br>
+                <div id="waveLogo"></div>
+                <div id="waveText"> Commuting Made Simple <br/>
+                    <div id="subscribe">
+                        <!--Removed for now!-->
+                    </div>
+                </div>
+                <!--Wave Text!-->
+            </div>
+            <!--Text Center!-->
+        </div>
+        <nav class="navbar transparent navbar-inner" id="waveNav" data-spy="affix" data-offset-top="0">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <div>
+                        <button type="button" class="pull-left navbar-toggle" id="side" data-toggle="offcanvas"
+                                data-target="#nv" data-canvas="body"><span
+                                class="sr-only">Toggle navigation</span> <span
+                                class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <a class="navbar-brand" id="minlogo" data-spy="affix" href="#Home">
+                        <img src="img/logo2.png"/>
+                    </a>
+                </div>
+                <div id="nv" class="collapse navbar-collapse">
+                    <ul id="nvu" class="nav navbar-nav navbar-right">
+                        <li><a href="#Home" class="selectedClass">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#howitworks">How it Works</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                        <li><a ui-sref="register()" id="regLink">Register</a></li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div id="about">
+        <div uib-carousel active="home.carousel.active" interval="home.carousel.myInterval" no-wrap="home.carousel.noWrapSlides" template-url="modules/templates/home-carousel.html">
+            <div uib-slide ng-repeat="slide in home.carousel.slides track by slide.id" index="slide.id">
+                <img ng-src="{{slide.image}}" style="margin:auto;">
+                <div class="carousel-caption">
+                    <p>{{slide.caption}}</p>
+                </div>
+            </div>
+        </div>
+
+        <!--Carousel!-->
+
+        <div id="Benefits">
+            <div class="container-fluid">
+                <div id="b1">
+                    <div class="row">
+                        <div class="col-sm-12"><h1>Our Vision</h1></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12"><p>To provide the best everyday commute system that is reliable,
+                            comfortable, and safe.</p></div>
+                    </div>
+                </div>
+                <!--b1!-->
+
+                <div id="bens">
+
+                    <center>
+                        <div class="row">
+                            <div class="col-sm-12" align="center"><h1>Why RideWave?</h1></div>
+                        </div>
+                        <div id="benst">
+                            <div class="row">
+                                <div class="col-xs-6 col-sm-4"><img src="img/icons/1.png"/>
+                                    <h3>Sure Seats</h3>
+                                    <p>Wave guarantees you a seat after you've booked. No more waiting and lining
+                                        up!</p>
+                                </div>
+                                <div class="col-xs-6 col-sm-4"><img src="img/icons/2.png"/>
+                                    <h3>Direct</h3>
+                                    <p>Smooth, speedy, and straight to the point, Wave ensures a fast and direct ride to
+                                        your destination.</p>
+                                </div>
+                                <div class="col-xs-6 col-sm-4"><img src="img/icons/3.png"/>
+                                    <h3>Safe</h3>
+                                    <p>No sketchy people on-board! Only pre-booked people can ride the wave.</p>
+                                </div>
+                                <div class="col-xs-6 col-sm-4"><img src="img/icons/4.png"/>
+                                    <h3>Clean & Comfy</h3>
+                                    <p>Wave ensures passengers comfortable seats with enough legroom to boot.</p>
+                                </div>
+                                <div class="col-xs-6 col-sm-4"><img src="img/icons/5.png"/>
+                                    <h3>On-Time Departure</h3>
+                                    <p>Wave values punctuality, because we know your time is gold.</p>
+                                </div>
+                                <div class="col-xs-6 col-sm-4"><img src="img/icons/6.png"/>
+                                    <h3>Save Time & Money</h3>
+                                    <p>Share the love and share the cost — cause with Wave, sharing is caring!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </center>
+                </div>
+                <!--Bens!-->
+            </div>
+            <!--Container?!-->
+            <div id="filler"></div>
+        </div>
+        <!--Benefits!-->
+    </div>
+    <!--About!-->
+
+    <div id="howitworks">
+        <div class="container-fluid">
+            <div id="hContainer">
+                <h1>How it Works</h1>
+                <div id="HContainer">
+                    <div id="hIcons">
+                        <div id="i1"><img src="img/icons/h1.png"/></div>
+                    </div>
+                    <!--HIcons!-->
+                    <div id="HBar">
+                        <ul id="pBar">
+                            <li><a>
+                                <div id="l1" class="node blue"></div>
+                            </a></li>
+                            <li>
+                                <div id="dd1" class="divider grey"></div>
+                            </li>
+                            <li><a>
+                                <div id="l2" class="node grey"></div>
+                            </a></li>
+                            <li>
+                                <div id="dd2" class="divider grey"></div>
+                            </li>
+                            <li><a>
+                                <div id="l3" class="node grey"></div>
+                            </a></li>
+                        </ul>
+                    </div>
+                    <!--Bar!-->
+                    <div id="HDesc">
+                        <div id="d1">
+                            <h2><a>1. Join the Community</a></h2>
+                            <p><a href="register.html">Register your personal details here</a> & sign up your
+                                organization to share Wave with your
+                                community.</p>
+                        </div>
+                        <!--D1!-->
+
+                        <div id="d2">
+                            <h2><a>2. Reserve Your Ride</a></h2>
+                            <p>Guarantee your rides by booking in advance with Wave's online system(Coming Soon).</p>
+                        </div>
+                        <!--D2!-->
+
+                        <div id="d3">
+                            <h2><a>3. Ride the Wave</a></h2>
+                            <p>Simply wait for confirmation before boarding on the vehicle.</p>
+                        </div>
+                        <!--D3!-->
+                        <div class="clear"></div>
+                    </div>
+                    <!--Descs!-->
+                </div>
+                <!--HContainer!-->
+            </div>
+            <!--hContainer!-->
+        </div>
+        <!--Container!-->
+    </div>
+    <!--How it Works!-->
+
+    <div id="contact">
+        <div class="container-fluid">
+            <div id="ContactContainer">
+                <div id="ContactHeader">
+                    <H1>
+                        Contact Us
+                        </H2>
+                </div>
+                <!--ContactHeader!-->
+                <div id="contactInfo">
+                    <div id="contactForms">
+                        <form method="post" enctype="text/plain" id="cContact" ng-submit="home.submitContact()">
+                            <input ng-model="home.form.cName" type="text" name="cName" id="cName" placeholder=" Your Name" required/>
+                            <br/>
+                            <input ng-model="home.form.cMail" type="email" name="cMail" id="cMail" placeholder=" Your E-Mail" required/>
+                            <br/>
+                            <textarea ng-model="home.form.cMess" name="Message" form="usrform" id="cMess" name="cMess" placeholder=" Your Message" required></textarea>
+                            <br/>
+                            <button type="submit" id="cSubmit" ng-disabled="home.isSending">Send</button>
+                            <div id="success">Success!</div>
+                        </form>
+                    </div>
+                    <!--ContactForms!-->
+
+                    <div id="contactMedia">
+                        <p>Excited? Then it's time to sign up your community. If there's a will there's Wave!</p>
+                        <div id="icons"><a href="https://www.facebook.com/ridewave"><img
+                                src="img/icons/fb.png"/></a> Find us on Facebook!
+                        </div>
+                        <!--icons!-->
+                        <p>
+                            <b>Bitspace, Makati, Philippines<br/>
+                                <ui-gmap-google-map center='home.map.center' zoom='home.map.zoom'>
+                                    <ui-gmap-marker idKey='home.marker.id' coords="home.marker.coords"></ui-gmap-marker>
+                                </ui-gmap-google-map>
+                                <br/>
+                                T: 0917-898-0650</b>
+                        </p>
+                    </div>
+                    <!--Contact Media!-->
+
+                </div>
+                <!--Contact Info!-->
+            </div>
+            <!--Contact Container!-->
+        </div>
+        <!--Container!-->
+    </div>
+    <!--Contact!-->
+
+</div>
