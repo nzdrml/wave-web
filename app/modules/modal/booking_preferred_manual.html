@@ -1,0 +1,60 @@
+<div class="modal-header">
+    <h3 class="modal-title">Set Preferred Points</h3>
+</div>
+<div class="modal-body">
+
+    <form class="">
+        <div class="row">
+            <div class="col-sm-6">
+                <h3>Home</h3>
+                <div class="form-group">
+                    <label for="">House Num</label>
+                    <input ng-model="prefManualModal.form.home.street_number" ng-required="true" type="text" class="form-control" id="" placeholder="House/Bldg number">
+                </div>
+                <div class="form-group">
+                    <label for="">Street Name</label>
+                    <input ng-model="prefManualModal.form.home.route" ng-required="true" type="text" class="form-control" id="" placeholder="Street Name">
+                </div>
+                <div class="form-group">
+                    <label for="">Municipality</label>
+                    <input ng-model="prefManualModal.form.home.locality" ng-required="true" type="text" class="form-control" id="" placeholder="City">
+                </div>
+                <div class="form-group">
+                    <label for="">Province</label>
+                    <input ng-model="prefManualModal.form.home.administrative_area" ng-required="true" type="text" class="form-control" id="" placeholder="State/Province">
+                </div>
+                <div class="form-group">
+                    <label for="">Postal Code</label>
+                    <input ng-model="prefManualModal.form.home.postal_code" ng-required="true" type="text" class="form-control" id="" placeholder="Postal Code">
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <h3>Work</h3>
+                <div class="form-group">
+                    <label for="">House Num</label>
+                    <input ng-model="prefManualModal.form.work.street_number" ng-required="true" type="text" class="form-control" id="" placeholder="House/Bldg number">
+                </div>
+                <div class="form-group">
+                    <label for="">Street Name</label>
+                    <input ng-model="prefManualModal.form.work.route" ng-required="true" type="text" class="form-control" id="" placeholder="Street Name">
+                </div>
+                <div class="form-group">
+                    <label for="">Municipality</label>
+                    <input ng-model="prefManualModal.form.work.locality" ng-required="true" type="text" class="form-control" id="" placeholder="City">
+                </div>
+                <div class="form-group">
+                    <label for="">Province</label>
+                    <input ng-model="prefManualModal.form.work.administrative_area" ng-required="true" type="text" class="form-control" id="" placeholder="State/Province">
+                </div>
+                <div class="form-group">
+                    <label for="">Postal Code</label>
+                    <input ng-model="prefManualModal.form.work.postal_code" ng-required="true" type="text" class="form-control" id="" placeholder="Postal Code">
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" type="button" ng-click="prefManualModal.ok()">OK</button>
+    <button class="btn btn-warning" type="button" ng-click="prefManualModal.cancel()">Cancel</button>
+</div>

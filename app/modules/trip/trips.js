@@ -38,7 +38,7 @@ angular.module('trip', [])
     })
     .controller('TripHistoryCtrl', function($q,$scope, $state, Restangular, growl, Booking, Route, Point) {
         var vm = this;
-        console.log("Histpry");
+
         $q.join(Route.service.getList(), Point.service.getList(), Restangular.all('user_bookings').getList(), function(routes, points, bookings){
             vm.routes = routes.plain();
             vm.points = points.plain();
