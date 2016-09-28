@@ -1,0 +1,79 @@
+<form id="msform">
+    <!-- progressbar -->
+    <ul id="progressbar">
+        <li class="active">Basic Info</li>
+        <li>Home Details</li>
+        <li>Work Details</li>
+    </ul>
+    <!-- fieldsets -->
+    <fieldset>
+        <div class="form-group">
+            <div class="col-sm-6">
+                <input ng-model="form.user.first_name" type="text" class="name" placeholder="First Name" required/>
+            </div>
+            <div class="col-sm-6">
+                <input ng-model="form.user.last_name" type="text" class="name" ng-model="lName" placeholder="Last Name" required/>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-12">
+                <input ng-model="form.user.phone" type="text" ng-model="pnumber" placeholder="Mobile Phone Number" required/>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-12">
+                <input  ng-model="form.user.email" type="email" ng-model="email" placeholder="E-mail" required/>
+                <div id="eError" class="error">Email already taken</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-12">
+                <input ng-model="form.user.password" type="password" ng-model="password" placeholder="Password" pattern="^[A-Za-z0-9!@#$%^&*_=+-]{8,}$" required/>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-12">
+                <input ng-model="form.user.password_confirmation" type="password" ng-model="password" placeholder="Confirm Password" required/>
+            </div>
+        </div>
+        <input type="button" name="next" class="next action-button" value="Home Detail" />
+    </fieldset>
+    <fieldset>
+        <div class="form-group">
+            <input ng-model="form.home.street_number" ng-required="true" type="text" class="form-control" id="" placeholder="House/Bldg number">
+        </div>
+        <div class="form-group">
+            <input ng-model="form.home.route" ng-required="true" type="text" class="form-control" id="" placeholder="Street Name">
+        </div>
+        <div class="form-group">
+            <input ng-model="form.home.locality" ng-required="true" type="text" class="form-control" id="" placeholder="City">
+        </div>
+        <div class="form-group">
+            <input ng-model="form.home.administrative_area" ng-required="true" type="text" class="form-control" id="" placeholder="State/Province">
+        </div>
+        <div class="form-group">
+            <input ng-model="form.home.postal_code" ng-required="true" type="text" class="form-control" id="" placeholder="Postal Code">
+        </div>
+        <input type="button" name="previous" class="previous action-button" value="Basic Info" />
+        <input type="button" name="next" class="next action-button" value="Work Info" />
+    </fieldset>
+    <fieldset>
+        <div class="form-group">
+            <input ng-model="form.work.street_number" ng-required="true" type="text" class="form-control" id="" placeholder="House/Bldg number">
+        </div>
+        <div class="form-group">
+            <input ng-model="form.work.route" ng-required="true" type="text" class="form-control" id="" placeholder="Street Name">
+        </div>
+        <div class="form-group">
+            <input ng-model="form.work.locality" ng-required="true" type="text" class="form-control" id="" placeholder="City">
+        </div>
+        <div class="form-group">
+            <input ng-model="form.work.administrative_area" ng-required="true" type="text" class="form-control" id="" placeholder="State/Province">
+        </div>
+        <div class="form-group">
+            <input ng-model="form.work.postal_code" ng-required="true" type="text" class="form-control" id="" placeholder="Postal Code">
+        </div>
+        <input type="button" name="previous" class="previous action-button" value="Home Info" />
+        <input type="submit" name="submit" class="submit action-button" value="Register" ng-click="register()" />
+    </fieldset>
+</form>

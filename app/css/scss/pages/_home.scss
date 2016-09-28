@@ -124,6 +124,10 @@ nav.navbar{
   background-size: cover;
   width:100%;
 
+  #waveNav{
+    bottom:0;
+  }
+
 }
 
 #waveText{
@@ -253,10 +257,10 @@ nav.navbar{
   margin-top: 68px;
 }
 
+
 #waveNav{
   width:100%;
   position:absolute;
-  bottom:0;
   text-transform:uppercase;
   font-weight:bold;
   color:#FFFFFF;
