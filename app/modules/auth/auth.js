@@ -2,7 +2,7 @@
  * Created by mark5 on 24/07/2016.
  */
 
-angular.module("auth", ["AuthService"])
+angular.module("auth", ["AuthService", "home-directive"])
     .config(function ($stateProvider) {
         $stateProvider
             .state("register", {
@@ -28,33 +28,33 @@ angular.module("auth", ["AuthService"])
         vm.register = function () {
             console.log(vm.form);
 
-            vm.isPosting = true;
-
-            Auth.requestToken()
-                .then(function (accessData) {
-                    console.log(accessData);
-                    return Restangular.all('users').post({user: vm.form}, null, {
-                        Authorization: "Bearer " + accessData
-                    });
-                })
-                .then(function (response) {
-                    growl.success("Successfully Registered! Redirecting to login in...", {
-                        ttl: 3000,
-                        disableCountDown: false
-                    });
-                    return $q.delay(3000);
-                })
-                .then(function(){
-                    vm.form = {};
-                    return $state.go("login");
-                })
-                .catch(function (err) {
-                    console.log(err);
-                    return growl.error("Registration Failed");
-                })
-                .finally(function () {
-                    vm.isPosting = false;
-                });
+            // vm.isPosting = true;
+            //
+            // Auth.requestToken()
+            //     .then(function (accessData) {
+            //         console.log(accessData);
+            //         return Restangular.all('users').post({user: vm.form}, null, {
+            //             Authorization: "Bearer " + accessData
+            //         });
+            //     })
+            //     .then(function (response) {
+            //         growl.success("Successfully Registered! Redirecting to login in...", {
+            //             ttl: 3000,
+            //             disableCountDown: false
+            //         });
+            //         return $q.delay(3000);
+            //     })
+            //     .then(function(){
+            //         vm.form = {};
+            //         return $state.go("login");
+            //     })
+            //     .catch(function (err) {
+            //         console.log(err);
+            //         return growl.error("Registration Failed");
+            //     })
+            //     .finally(function () {
+            //         vm.isPosting = false;
+            //     });
         };
 
         $scope.$watchGroup(['vm.form.password', 'vm.form.password_confirmation'], function () {

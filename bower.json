@@ -50,7 +50,8 @@
     "font-awesome": "^4.6.3",
     "angularUtils-pagination": "angular-utils-pagination#^0.11.1",
     "moment": "^2.14.1",
-    "angular-bootstrap-datetimepicker": "^1.0.1"
+    "angular-bootstrap-datetimepicker": "^1.0.1",
+    "jquery.easing": "jquery-easing-original#^1.4.1"
   },
   "overrides": {
     "bootstrap": {
