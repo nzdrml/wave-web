@@ -99,7 +99,7 @@
                             ng-click="booking.setDest(route)">
                             <td>{{ booking.findPoint(route.destination_id).name }}</td>
                             <td>{{route.price | currency}}</td>
-                            <td><span class="label label-success">{{route.id}}</span></td>
+                            <td><span class="label label-success">{{route.time | date : "hh:mm:ss a" }}</span></td>
                         </tr>
                         </tbody>
                     </table>
@@ -147,13 +147,14 @@
                                     <div class="input-group-addon">
                                         <i class="fa fa-clock-o"></i>
                                     </div>
-                                    <input id="routeTime" data-toggle="dropdown" type="text" class="form-control pull-right active" ng-model="booking.form.schedule" ng-required="true">
-                                    <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                                        <datetimepicker data-ng-model="booking.form.schedule"
-                                                        data-datetimepicker-config="{ dropdownSelector: '#routeTime', modelType: 'MMM DD, YYYY HH:mm a' }">
+                                    <input id="routeTime" data-toggle="dropdown" type="text" class="form-control pull-right active" ng-model="booking.input.time" ng-required="true" ng-disabled="true">
+                                    <!--<input id="routeTime" data-toggle="dropdown" type="text" class="form-control pull-right active" ng-model="booking.form.schedule" ng-required="true">-->
+                                    <!--<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">-->
+                                        <!--<datetimepicker data-ng-model="booking.form.route.time"-->
+                                                        <!--data-datetimepicker-config="{ dropdownSelector: '#routeTime', modelType: 'MMM DD, YYYY HH:mm a' }">-->
 
-                                        </datetimepicker>
-                                    </ul>
+                                        <!--</datetimepicker>-->
+                                    <!--</ul>-->
                                 </div>
                             </div>
                         </div>

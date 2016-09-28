@@ -16,7 +16,7 @@ angular.module("auth", ["AuthService"])
                 controller: "LoginCtrl as login"
             })
     })
-    .controller("RegisterCtrl", function ($scope, $ocLazyLoad, Restangular, growl, Auth) {
+    .controller("RegisterCtrl", function ($q, $scope, $state, $ocLazyLoad, Restangular, growl, Auth) {
         var vm = this;
 
         vm.form = {
@@ -34,14 +34,22 @@ angular.module("auth", ["AuthService"])
                 .then(function (accessData) {
                     console.log(accessData);
                     return Restangular.all('users').post({user: vm.form}, null, {
-                        Authorization: "Bearer " + accessData.access_token
+                        Authorization: "Bearer " + accessData
                     });
                 })
                 .then(function (response) {
+                    growl.success("Successfully Registered! Redirecting to login in...", {
+                        ttl: 3000,
+                        disableCountDown: false
+                    });
+                    return $q.delay(3000);
+                })
+                .then(function(){
                     vm.form = {};
-                    return growl.success("Successfully Registered!");
+                    return $state.go("login");
                 })
                 .catch(function (err) {
+                    console.log(err);
                     return growl.error("Registration Failed");
                 })
                 .finally(function () {
@@ -70,7 +78,7 @@ angular.module("auth", ["AuthService"])
             console.log(vm.form);
 
             // vm.isSending = true;
-
+            Auth.logout();
             Auth.login(vm.form)
                 .then(function (response) {
                     growl.info("Successfully logged in! Redirecting in ", {

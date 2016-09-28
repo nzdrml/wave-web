@@ -35,43 +35,6 @@ nav.navbar {
 .angular-google-map-container {
   height: 100px; }
 
-@media (max-width: 767px) {
-  #waveNav {
-    font: 3vw quicksand; }
-  #minlogo {
-    display: none; }
-  #waveLogo {
-    width: 200px;
-    height: 138px;
-    margin-left: auto;
-    margin-right: auto; }
-  #waveText {
-    font: 2vw quicksand; }
-  #waveText input {
-    width: 100%; }
-  #waveText button {
-    width: 100%; } }
-
-@media (min-width: 768px) {
-  #waveLogo {
-    max-width: 400px;
-    height: 276px; }
-  #waveText {
-    font: 1.2vw quicksand; }
-  #waveNav {
-    font: 1.5vw quicksand; } }
-
-@media (min-width: 992px) {
-  #waveLogo {
-    max-width: 400px;
-    height: 276px; }
-  #waveText {
-    font: 1.2vw quicksand; }
-  #waveNav {
-    font: 1vw quicksand; }
-  #waveText input {
-    width: 300px; } }
-
 #regLink {
   color: #feaf52; }
 
@@ -130,14 +93,12 @@ nav.navbar {
 #subscribe {
   padding-top: 30px; }
 
-#waveLogo {
-  margin-top: 10%;
-  margin-left: auto;
-  margin-right: auto;
-  background: no-repeat;
-  background-image: url(../img/logo.png);
-  background-size: contain;
-  position: relative; }
+#waveLogo img {
+  margin: 0 auto;
+  max-height: 220px; }
+
+#waveLogo + #waveText {
+  letter-spacing: 8px; }
 
 #side.pull-left.navbar-toggle {
   float: left;
@@ -186,9 +147,6 @@ nav.navbar {
   background-image: -webkit-linear-gradient(top, transparent 0%, transparent 100%);
   background-image: linear-gradient(180deg, transparent 0%, transparent 100%); }
 
-.nav.navbar-nav.navbar-right > li > a.selectedClass {
-  color: #8ccdf9; }
-
 @media (max-width: 768px) {
   .navmenu-default, .navbar-default .navbar-offcanvas {
     background: #000; }
@@ -216,8 +174,11 @@ nav.navbar {
   text-transform: uppercase;
   font-weight: bold;
   color: #FFFFFF;
+  border-radius: 0;
   -webkit-transition: all 1s ease-in;
   transition: all 1s ease-in; }
+  #waveNav li.active a {
+    color: #8ccdf9; }
 
 #waveC {
   height: 50%; }
@@ -228,17 +189,17 @@ nav.navbar {
 
 .carousel-inner {
   width: 100%;
-  max-height: 972x !important; }
-
-#CCap {
-  font: 3.5vw quicksand;
-  text-align: left; }
+  max-height: 972px !important; }
 
 #about {
   min-height: 100%;
   width: 100%; }
+  #about .carousel-caption {
+    font-family: quicksand;
+    text-align: left;
+    font-size: 3em; }
 
-#Benefits {
+#benefits {
   background: url(../img/bg2.jpg) no-repeat center center fixed;
   min-height: 100%;
   position: relative;
@@ -259,9 +220,6 @@ nav.navbar {
     font-size: 5vw; }
   #benst h3 {
     font-size: 3vw; }
-  #benst img {
-    max-width: 50px;
-    max-height: 50px; }
   #benst {
     font: 2vw quicksand; } }
 
@@ -272,9 +230,6 @@ nav.navbar {
     font: 3vw quicksand; }
   #benst h3 {
     font-size: 3vw; }
-  #benst img {
-    max-width: 90px;
-    max-height: 90px; }
   #benst {
     font: 1.6vw quicksand; } }
 
@@ -467,10 +422,6 @@ nav.navbar {
   height: 40px;
   -webkit-transition: all 1s ease-out;
   transition: all 1s ease-out; }
-
-#minlogo {
-  opacity: 0;
-  filter: alpha(opacity=0); }
 
 #minlogo.affix {
   opacity: 1;
@@ -672,6 +623,12 @@ nav.navbar {
   color: #000;
   display: none; }
 
+#contact .angular-google-map {
+  height: 100px; }
+
+#contact #icons img {
+  max-height: 30px; }
+
 #register {
   height: 100vh;
   width: 100%; }
@@ -803,8 +760,8 @@ nav.navbar {
 #booking #origin .box-footer .pagination {
   margin: 10px 0; }
 
+#booking .angular-google-map-container {
+  height: 300px; }
+
 #booking-summary .box-body {
   min-height: 400px; }
-
-.angular-google-map-container {
-  height: 300px; }

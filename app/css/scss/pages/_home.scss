@@ -45,64 +45,53 @@ nav.navbar{
 .angular-google-map-container { height: 100px; }
 
 
-@media(max-width:767px){
-
-  #waveNav{
-    font: 3vw quicksand;
-  }
-
-  #minlogo{
-    display:none;}
-
-  #waveLogo{
-    width:200px;
-    height:138px;
-    margin-left:auto;
-    margin-right:auto;
-  }
-
-  #waveText{
-    font: 2vw quicksand;
-  }
-
-  #waveText input{
-    width:100%;
-  }
-  #waveText button{
-    width:100%;
-  }
-}
-@media(min-width:768px){
-  #waveLogo{
-    max-width:400px;
-    height:276px;
-  }
-
-  #waveText{
-    font: 1.2vw quicksand;
-  }
-
-  #waveNav{
-    font: 1.5vw quicksand;
-  }
-}
-@media(min-width:992px){
-  #waveLogo{
-    max-width:400px;
-    height:276px;
-  }
-
-  #waveText{
-    font: 1.2vw quicksand;
-  }
-
-  #waveNav{
-    font: 1vw quicksand;
-  }
-  #waveText input{
-    width:300px;
-  }
-}
+//@media(max-width:767px){
+//
+//  #waveNav{
+//    font: 3vw quicksand;
+//  }
+//
+//  #minlogo{
+//    display:none;}
+//
+//  #waveLogo img{
+//    margin: 0 auto;
+//    max-height: 220px;
+//  }
+//
+//  #waveText{
+//    font: 2vw quicksand;
+//
+//    input{
+//      width:100%;
+//    }
+//
+//    button{
+//      width:100%;
+//    }
+//  }
+//}
+//@media(min-width:768px){
+//  #waveText{
+//    font: 1.2vw quicksand;
+//  }
+//
+//  #waveNav{
+//    font: 1.5vw quicksand;
+//  }
+//}
+//@media(min-width:992px){
+//  #waveText{
+//    font: 1.2vw quicksand;
+//  }
+//
+//  #waveNav{
+//    font: 1vw quicksand;
+//  }
+//  #waveText input{
+//    width:300px;
+//  }
+//}
 
 #regLink{
   color:#feaf52;
@@ -172,14 +161,13 @@ nav.navbar{
   padding-top:30px;
 }
 
-#waveLogo{
-  margin-top:10%;
-  margin-left: auto ;
-  margin-right: auto ;
-  background:no-repeat;
-  background-image:url(../img/logo.png);
-  background-size:contain;
-  position: relative;
+#waveLogo img{
+  margin: 0 auto;
+  max-height: 220px;
+}
+
+#waveLogo + #waveText{
+  letter-spacing: 8px;
 }
 
 #side.pull-left.navbar-toggle{
@@ -233,10 +221,6 @@ nav.navbar{
   background-image: linear-gradient(180deg,rgba(0,0,0,0.00) 0%,rgba(0,0,0,0.00) 100%);
 }
 
-.nav.navbar-nav.navbar-right > li > a.selectedClass {
-  color: #8ccdf9;
-}
-
 @media (max-width: 768px) {
   .navmenu-default, .navbar-default .navbar-offcanvas{
     background:#000;
@@ -276,11 +260,20 @@ nav.navbar{
   text-transform:uppercase;
   font-weight:bold;
   color:#FFFFFF;
+  border-radius: 0;
   -webkit-transition: all 1s ease-in;
   -moz-transition: all 1s ease-in;
   -ms-transition: all 1s ease-in;
   -o-transition: all 1s ease-in;
   transition: all 1s ease-in;
+
+  li{
+    &.active{
+      a{
+        color: #8ccdf9;
+      }
+    }
+  }
 }
 
 #waveC{
@@ -294,20 +287,21 @@ nav.navbar{
 
 .carousel-inner{
   width:100%;
-  max-height: 972x !important;
-}
-
-#CCap{
-  font: 3.5vw quicksand;
-  text-align:left;
+  max-height: 972px !important;
 }
 
 #about{
   min-height:100%;
   width:100%;
+
+  .carousel-caption{
+    font-family: quicksand;
+    text-align:left;
+    font-size: 3em;
+  }
 }
 
-#Benefits{
+#benefits{
   background: url(../img/bg2.jpg) no-repeat center center fixed;
   min-height: 100%;
   position:relative;
@@ -341,8 +335,8 @@ nav.navbar{
     font-size: 3vw;}
 
   #benst img{
-    max-width:50px;
-    max-height:50px;
+    //max-width:50px;
+    //max-height:50px;
   }
 
   #benst{
@@ -358,8 +352,8 @@ nav.navbar{
   #benst h3{
     font-size:3vw;}
   #benst img{
-    max-width:90px;
-    max-height:90px;
+    //max-width:90px;
+    //max-height:90px;
   }
 
   #benst{
@@ -646,8 +640,8 @@ nav.navbar{
 }
 
 #minlogo{
-  opacity: 0;
-  filter: alpha(opacity=0)
+  //opacity: 0;
+  //filter: alpha(opacity=0)
 }
 
 #minlogo.affix{
@@ -914,4 +908,16 @@ nav.navbar{
   font: 15px quicksand;
   color:#000;
   display:none;
+}
+
+#contact{
+  .angular-google-map{
+    height: 100px;
+  }
+
+  #icons{
+    img{
+      max-height: 30px;
+    }
+  }
 }

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module("home", [])
+angular.module("home", ["home-directive"])
     .config(function ($stateProvider) {
         $stateProvider
             .state("home", {
@@ -59,6 +59,14 @@ angular.module("home", [])
             }
         });
 
+        jQuery('#nvu li a').bind('click', function(event) {
+            var anchor = jQuery(this);
+            jQuery('html, body').stop().animate({
+                scrollTop: (jQuery(anchor.attr('href')).offset().top - 50)
+            }, 500);
+            event.preventDefault();
+        });
+
         vm.submitContact = function () {
             console.log("Sending", vm.form);
             vm.isSending = true;
@@ -68,6 +76,7 @@ angular.module("home", [])
             $http({
                 method: 'POST',
                 url: '/send.php',
+                headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                 data: vm.form
             })
                 .then(function (res) {

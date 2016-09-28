@@ -9,10 +9,11 @@ angular.module('booking', ['BookingService', 'RouteService', 'PointService', 'Us
                 controller: 'BookingCtrl as booking'
             });
     })
-    .controller('BookingCtrl', function($q,$scope, $state, $uibModal, uiGmapGoogleMapApi, growl, Booking, Route, Point) {
+    .controller('BookingCtrl', function($q, $scope, $filter, $state, $uibModal, uiGmapGoogleMapApi, growl, Booking, Route, Point) {
         var vm = this;
         
         vm.selected = "";
+        vm.input = {};
         vm.form = {};
 
         vm.pagination = {
@@ -31,6 +32,8 @@ angular.module('booking', ['BookingService', 'RouteService', 'PointService', 'Us
             var destPoint = _.find(vm.points, ['id', route.destination_id]);
             vm.form.destination = destPoint;
             vm.form.route = route;
+            console.log(route);
+            vm.input.time = $filter('date')(route.time, 'hh:mm:ss a');
             vm.setMarkerCoords(vm.markers[1], destPoint.coordinates);
         };
 
