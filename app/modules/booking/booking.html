@@ -14,8 +14,8 @@
     <div class="row">
         <div class="col-sm-6">
             <div class="box">
-                <div class="box-header">
-                    Departure Point
+                <div class="box-header text-uppercase">
+                    Board at
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body">
@@ -31,8 +31,8 @@
                 </div>
             </div>
             <div class="box" id="origin">
-                <div class="box-header">
-                    Routes
+                <div class="box-header text-uppercase">
+                    Alight at
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body table-responsive no-padding">
@@ -51,6 +51,55 @@
                         </tr>
                         </tbody>
                     </table>
+                </div>
+                <div class="box-footer">
+                    <dir-pagination-controls></dir-pagination-controls>
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <div class="box" id="">
+                <div class="box-header">
+                    Route Dates
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body table-responsive">
+                    <p class="text-center">{{booking.calendarTitle}}</p>
+                    <div class="btn-group">
+                        <button
+                                class="btn btn-primary"
+                                mwl-date-modifier
+                                date="booking.viewDate"
+                                decrement="booking.calendarView"
+                                ng-click="booking.cellIsOpen = false">
+                            Previous
+                        </button>
+                        <button
+                                class="btn btn-default"
+                                mwl-date-modifier
+                                date="booking.viewDate"
+                                set-to-today
+                                ng-click="booking.cellIsOpen = false">
+                            Today
+                        </button>
+                        <button
+                                class="btn btn-primary"
+                                mwl-date-modifier
+                                date="booking.viewDate"
+                                increment="booking.calendarView"
+                                ng-click="booking.cellIsOpen = false">
+                            Next
+                        </button>
+                    </div>
+                    <mwl-calendar
+                            view="booking.calendarView"
+                            view-date="booking.viewDate"
+                            view-title="booking.calendarTitle"
+                            events="booking.events"
+                            on-view-change-click="false"
+                            on-timespan-click="booking.timespanClicked(calendarDate, calendarCell )"
+                            on-event-times-changed="calendarEvent.startsAt = calendarNewEventStart; calendarEvent.endsAt = calendarNewEventEnd"
+                            cell-is-open="false">
+                    </mwl-calendar>
                 </div>
                 <div class="box-footer">
                     <dir-pagination-controls></dir-pagination-controls>
@@ -124,7 +173,7 @@
 
                     <div class="box-footer">
                         <button type="submit" class="btn btn-primary">Book</button>
-                        <button type="button" class="btn btn-default" ng-click="booking.open()">Open me!</button>
+                        <!--<button type="button" class="btn btn-default" ng-click="booking.open()">Open me!</button>-->
                     </div>
                 </form>
             </div>

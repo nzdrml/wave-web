@@ -83,4 +83,14 @@ angular.module("AuthService", ['UserService'])
             $http.defaults.headers.common.Authorization = 'Bearer ' + self.getToken();
             $http.defaults.headers.common["X-Authorization"] = user.access_token;
         };
+
+        self.register = function(formData){
+            return self.requestToken()
+                .then(function(accessData){
+                    formData.user.company = "Company";
+                    return Restangular.all('users').post({user: formData.user}, null, {
+                        Authorization: "Bearer " + accessData
+                    });
+                });
+        };
     });

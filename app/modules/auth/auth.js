@@ -10,19 +10,26 @@ angular.module("auth", ["AuthService", "AddressService", "home-directive"])
                 templateUrl: "modules/auth/register.html",
                 controller: "RegisterCtrl as register"
             })
+            .state("verifyMobile", {
+                url: "/verifyMobile",
+                templateUrl: "modules/auth/verify_mobile.html",
+                controller: "RegisterCtrl as registerCtrl"
+            })
+            .state("preferredLocations", {
+                url: "/preferredLocations",
+                templateUrl: "modules/auth/preferred_locations.html",
+                controller: "RegisterCtrl as registerCtrl"
+            })
             .state("login", {
                 url: "/login",
                 templateUrl: "modules/auth/login.html",
-                controller: "LoginCtrl as login"
+                controller: "LoginCtrl as loginCtrl"
             })
     })
     .controller("RegisterCtrl", function ($q, $scope, $state, $ocLazyLoad, Restangular, growl, Auth, Address) {
         var vm = this;
 
-        vm.form = {
-            company: "NULL"
-        };
-
+        vm.form = {};
         vm.isPosting = false;
 
         vm.register = function () {
@@ -31,32 +38,7 @@ angular.module("auth", ["AuthService", "AddressService", "home-directive"])
             vm.isPosting = true;
 
             Auth.logout();
-            Auth.requestToken()
-                .then(function (accessData) {
-                    console.log(accessData);
-                    vm.form.user.company = "Company";
-                    return Restangular.all('users').post({user: vm.form.user}, null, {
-                        Authorization: "Bearer " + accessData
-                    });
-                })
-                .tap(function(userResponse){
-                    console.log("User Response: " + userResponse);
-
-                    var defaultInfo = {
-                        user_id: userResponse.id,
-                        country: "Philippines",
-                        coordinates: ""
-                    };
-
-                    var addresses = {
-                        home: _.extend(vm.form.home, defaultInfo, {type: "home"}),
-                        work: _.extend(vm.form.work, defaultInfo, {type: "work"})
-                    };
-
-                    console.log("Sending: " + addresses);
-
-                    return $q.join(Address.service.post({address: addresses.home}), Address.service.post({address: addresses.work}));
-                })
+            Auth.register(vm.form)
                 .then(function (response) {
                     growl.success("Successfully Registered! Redirecting to login in...", {
                         ttl: 3000,
@@ -77,6 +59,10 @@ angular.module("auth", ["AuthService", "AddressService", "home-directive"])
                 });
         };
 
+        vm.verifyMobile = function(){
+
+        };
+
         $scope.$watchGroup(['vm.form.password', 'vm.form.password_confirmation'], function () {
 
             if (vm.form.password === vm.form.password_confirmation) {
@@ -89,23 +75,21 @@ angular.module("auth", ["AuthService", "AddressService", "home-directive"])
 
         vm.isSending = false;
 
-        if( Auth.isAuthenticated() ){
-            Auth.logout();
-            $window.location.reload();
-        }
+        // if( Auth.isAuthenticated() ){
+        //     Auth.logout();
+        //     $window.location.reload();
+        // }
 
         vm.login = function() {
-            console.log(vm.form);
-
-            // vm.isSending = true;
+            vm.isSending = true;
             Auth.logout();
             Auth.login(vm.form)
                 .then(function (response) {
-                    growl.info("Successfully logged in! Redirecting in ", {
-                        ttl: 3000,
-                        disableCountDown: false
-                    });
-                    return $q.delay(3000);
+                    // growl.info("Successfully logged in! Redirecting in ", {
+                    //     ttl: 3000,
+                    //     disableCountDown: false
+                    // });
+                    return $q.delay(500);
                 })
                 .then(function(){
                     return $state.go("main.bookings");

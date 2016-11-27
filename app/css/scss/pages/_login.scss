@@ -1,0 +1,43 @@
+#login {
+  padding-top: 50px;
+  min-height: 100vh;
+  background: url(../img/bg3.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.login-box{
+  width: 100%;
+  margin: 0 auto;
+
+  .login-logo {
+    display: block;
+    margin: 0 auto 20px;
+
+    transition-duration: .5s;
+    transition-property: transform;
+    transform: translateZ(0);
+
+    img{
+      max-height: 100px;
+    }
+  }
+
+  .remember-me-box{
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+
+    input[type=checkbox]{
+      margin-right: 10px;
+    }
+
+    label{
+      cursor: pointer;
+    }
+  }
+
+  button{
+    background-color: $color_ridewave_yellow;
+  }
+}

@@ -1,6 +1,6 @@
 <div class="wrapper">
     <header class="main-header">
-        <a class="logo" ui-sref="main.dashboard"><span class="logo-mini"><b>W</b>Ad</span> <span class="logo-lg"><b>RideWave</b>Admin</span></a>
+        <a class="logo" ui-sref="main.dashboard"><span class="logo-mini"><b>W</b>Ad</span> <span class="logo-lg"><b>RideWave</b></span></a>
         <nav class="navbar navbar-static-top" role="navigation">
             <a class="sidebar-toggle" data-toggle="offcanvas" role="button"><span class="sr-only">Toggle navigation</span></a>
         </nav>
@@ -15,7 +15,7 @@
             </div>
             <form action="#" class="sidebar-form" method="get">
                 <div class="input-group">
-                    <input class="form-control" name="q" placeholder="Search..." type="text"> <span class="input-group-btn"><button class="btn btn-flat" id="search-btn" name="search" type="submit"><span class="input-group-btn"><span class="input-group-btn"><span class="input-group-btn"><i class="fa fa-search"></i></span></span></span></button></span>
+                    <!--<input class="form-control" name="q" placeholder="Search..." type="text"> <span class="input-group-btn"><button class="btn btn-flat" id="search-btn" name="search" type="submit"><span class="input-group-btn"><span class="input-group-btn"><span class="input-group-btn"><i class="fa fa-search"></i></span></span></span></button></span>-->
                 </div>
             </form>
             <ul class="sidebar-menu">
@@ -35,7 +35,7 @@
                     </ul>
                 </li>
                 <li ui-sref-active="active">
-                    <a ng-click="main.logout()"><i class="fa fa-link"></i> <span>Logout</span></a>
+                    <a class="logout-link" ng-click="main.logout()"><i class="fa fa-link"></i> <span>Logout</span></a>
                 </li>
             </ul>
         </section>

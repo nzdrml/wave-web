@@ -1,0 +1,8 @@
+mwl-calendar .cal-year-box [class*="span"],
+mwl-calendar .cal-month-box [class*="cal-cell"] {
+  min-height: 50px;
+}
+
+mwl-calendar .cal-month-day{
+  height: 50px;
+}

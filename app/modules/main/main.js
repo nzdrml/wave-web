@@ -20,6 +20,7 @@ angular.module('main', [])
         vm.user = Auth.getUser();
 
         vm.logout = function(){
+            Auth.logout();
             $state.go("login");
         };
 

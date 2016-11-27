@@ -1,0 +1,78 @@
+<nav class="navbar transparent navbar-inner navbar-fixed-top" id="waveNav">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <div>
+                <button type="button" class="pull-left navbar-toggle" id="side" data-toggle="offcanvas"
+                        data-target="#nv" data-canvas="body"><span
+                        class="sr-only">Toggle navigation</span> <span
+                        class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+                </button>
+            </div>
+            <a class="navbar-brand" id="minlogo" ui-sref="home()">
+                <img src="img/logo2.png"/>
+            </a>
+        </div>
+        <div id="nv" class="collapse navbar-collapse">
+            <ul id="nvu" class="nav navbar-nav navbar-right">
+                <li><a ui-sref="login()">login</a></li>
+                <li><a ui-sref="register()" id="regLink">Register</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<section id="register">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8 col-sm-offset-2">
+                <div class="col-md-6">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Home Address</h3>
+                        </div>
+                        <div class="panel-body">
+                            <div class="form-group">
+                                <input ng-model="form.home.street_number" ng-required="true" type="text" class="form-control" id="" placeholder="House/Bldg number">
+                            </div>
+                            <div class="form-group">
+                                <input ng-model="form.home.route" ng-required="true" type="text" class="form-control" id="" placeholder="Street Name">
+                            </div>
+                            <div class="form-group">
+                                <input ng-model="form.home.locality" ng-required="true" type="text" class="form-control" id="" placeholder="City">
+                            </div>
+                            <div class="form-group">
+                                <input ng-model="form.home.administrative_area" ng-required="true" type="text" class="form-control" id="" placeholder="State/Province">
+                            </div>
+                            <div class="form-group">
+                                <input ng-model="form.home.postal_code" ng-required="true" type="text" class="form-control" id="" placeholder="Postal Code">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Work Address</h3>
+                        </div>
+                        <div class="panel-body">
+                            <div class="form-group">
+                                <input ng-model="form.work.street_number" ng-required="true" type="text" class="form-control" id="" placeholder="House/Bldg number">
+                            </div>
+                            <div class="form-group">
+                                <input ng-model="form.work.route" ng-required="true" type="text" class="form-control" id="" placeholder="Street Name">
+                            </div>
+                            <div class="form-group">
+                                <input ng-model="form.work.locality" ng-required="true" type="text" class="form-control" id="" placeholder="City">
+                            </div>
+                            <div class="form-group">
+                                <input ng-model="form.work.administrative_area" ng-required="true" type="text" class="form-control" id="" placeholder="State/Province">
+                            </div>
+                            <div class="form-group">
+                                <input ng-model="form.work.postal_code" ng-required="true" type="text" class="form-control" id="" placeholder="Postal Code">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

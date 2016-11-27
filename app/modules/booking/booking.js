@@ -9,7 +9,7 @@ angular.module('booking', ['BookingService', 'RouteService', 'PointService', 'Us
                 controller: 'BookingCtrl as booking'
             });
     })
-    .controller('BookingCtrl', function($q, $scope, $filter, $state, $uibModal, uiGmapGoogleMapApi, growl, Booking, Route, Point) {
+    .controller('BookingCtrl', function($q, $scope, $filter, $state, $uibModal, uiGmapGoogleMapApi, growl, calendarConfig, moment, Booking, Route, Point) {
         var vm = this;
         
         vm.selected = "";
@@ -105,6 +105,21 @@ angular.module('booking', ['BookingService', 'RouteService', 'PointService', 'Us
             ];
 
         });
+
+        vm.events = [
+            {
+                title: 'An event',
+                color: calendarConfig.colorTypes.warning,
+                startsAt: moment().startOf('week').subtract(2, 'days').add(8, 'hours').toDate(),
+                endsAt: moment().startOf('week').add(1, 'week').add(9, 'hours').toDate()
+            }
+        ];
+        vm.calendarView = 'month';
+        vm.viewDate = moment().startOf('month').toDate();
+
+        vm.timespanClicked = function(calendarDate, calendarCell ) {
+            console.log(calendarDate, calendarCell);
+        };
 
         vm.open = function () {
 

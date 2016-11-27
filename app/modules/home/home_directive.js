@@ -83,6 +83,7 @@ angular.module("home-directive", [])
             }
         }
     })
+    // <div form-register register="register.register()" ng-model="register.form"></div>
     .directive('formRegister', function(){
         return {
             restrict: 'A',

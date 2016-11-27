@@ -1,3 +1,12 @@
-@import "pages/home";
+@import "plugin";
+@import "adminlte";
+
+@import "variables";
+
+@import "pages/login";
 @import "pages/register";
+
+@import "pages/dashboard";
+
+@import "pages/home";
 @import "pages/booking";

@@ -20,35 +20,53 @@
         </div>
     </div>
 </nav>
-<section id="register">
-    <div id="Main">
-        <div id="Box">
-            <div id="box-container">
-                <a href="index.html">
-                    <div id="logo"></div>
-                </a>
-                <form class="form-horizontal" ng-submit="login.login()">
-                    <div class="form-group">
-                        <div class="col-sm-12">
-                            <input ng-model="login.form.email" type="text" id="lEmail" placeholder="Email">
-                        </div>
-                    </div>
+<section id="login">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-8 col-xs-offset-2 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+                <div class="login-box">
+                    <a href="index.html" class="login-logo">
+                        <img src="img/logo-new.png" alt="">
+                    </a>
+                    <!-- /.login-logo -->
+                    <div class="login-box-body">
+                        <p class="login-box-msg">Sign in to start riding the wave</p>
 
-                    <div class="form-group">
-                        <div class="col-sm-12">
-                            <input ng-model="login.form.password" type="password" id="lPass" placeholder="Password">
-                        </div>
-                    </div>
+                        <form ng-submit="loginCtrl.login()">
+                            <div class="form-group has-feedback">
+                                <input ng-model="loginCtrl.form.email" type="email" class="form-control" placeholder="Email">
+                                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                            </div>
+                            <div class="form-group has-feedback">
+                                <input ng-model="loginCtrl.form.password" type="password" class="form-control" placeholder="Password">
+                                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <div class="remember-me-box">
+                                        <input ng-model="loginCtrl.form.rememberMe" id="remember-me" type="checkbox"> <label for="remember-me">Remember Me</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <button type="submit" class="btn btn-primary btn-block btn-flat" ng-disabled="loginCtrl.isSending">Login</button>
+                                </div>
+                            </div>
+                        </form>
 
-                    <div class="form-group">
-                        <div class="col-sm-12">
-                            <button type="submit" id="button1" ng-disabled="login.isSending">Login</button>
-                            <div id="pError" class="error">Invalid username or password</div>
+                        <div class="social-auth-links text-center">
+                            <a href="#" class="btn btn-block btn-social btn-facebook btn-flat" ng-disabled="loginCtrl.isSending"><i class="fa fa-facebook"></i> Sign in using
+                                Facebook</a>
                         </div>
-                    </div>
+                        <!-- /.social-auth-links -->
 
-                </form>
-                <div id="link"><a ui-sref="register" >Not a User? Register Now!</a></div>
+                        <!--<a href="#">I forgot my password</a><br>-->
+                        <a href="register.html" class="text-center">Register</a>
+
+                    </div>
+                    <!-- /.login-box-body -->
+                </div>
             </div>
         </div>
     </div>

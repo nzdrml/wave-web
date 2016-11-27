@@ -5,6 +5,7 @@ angular.module('ridewaveApp', [
         'ui.router',
         'ridewave.modules',
         'mwl.bluebird',
+        'mwl.calendar',
         'ui.bootstrap',
         'ngAnimate',
         'uiGmapgoogle-maps',
