@@ -17,6 +17,7 @@ angular.module('main', [])
     })
     .controller('MainCtrl', function($ocLazyLoad, $state, Auth){
         var vm = this;
+        vm.user = Auth.getUser();
 
         vm.logout = function(){
             $state.go("login");

@@ -12,58 +12,6 @@
 <!-- Main content -->
 <section class="content" id="booking">
     <div class="row">
-        <div class="col-sm-12">
-            <!-- Map box -->
-            <div class="box box-solid">
-                <div class="box-header ui-sortable-handle" style="cursor: move;">
-                    <i class="fa fa-map-marker"></i>
-                    <h3 class="box-title">
-                        Map
-                    </h3>
-                </div>
-                <div class="box-body">
-                    <ui-gmap-google-map pan="true"
-                                        options='booking.map.options'
-                                        center='booking.map.center'
-                                        zoom='booking.map.zoom'
-                                        bounds="booking.map.bounds"
-                                        events="booking.map.events">
-                        <ui-gmap-markers models="booking.markers" coords="'self'" icon="'icon'" fit="true">
-                        </ui-gmap-markers>
-                    </ui-gmap-google-map>
-                </div>
-                <!-- /.box-body-->
-                <div class="box-footer no-border">
-                    <!--<div class="row">-->
-                    <!--<div class="col-xs-4 text-center" style="border-right: 1px solid #f4f4f4">-->
-                    <!--<div id="sparkline-1">-->
-                    <!--<canvas width="80" height="50"-->
-                    <!--style="display: inline-block; width: 80px; height: 50px; vertical-align: top;"></canvas>-->
-                    <!--</div>-->
-                    <!--<div class="knob-label">Visitors</div>-->
-                    <!--</div>-->
-                    <!--&lt;!&ndash; ./col &ndash;&gt;-->
-                    <!--<div class="col-xs-4 text-center" style="border-right: 1px solid #f4f4f4">-->
-                    <!--<div id="sparkline-2">-->
-                    <!--<canvas width="80" height="50"-->
-                    <!--style="display: inline-block; width: 80px; height: 50px; vertical-align: top;"></canvas>-->
-                    <!--</div>-->
-                    <!--<div class="knob-label">Online</div>-->
-                    <!--</div>-->
-                    <!--&lt;!&ndash; ./col &ndash;&gt;-->
-                    <!--<div class="col-xs-4 text-center">-->
-                    <!--<div id="sparkline-3">-->
-                    <!--<canvas width="80" height="50"-->
-                    <!--style="display: inline-block; width: 80px; height: 50px; vertical-align: top;"></canvas>-->
-                    <!--</div>-->
-                    <!--<div class="knob-label">Exists</div>-->
-                    <!--</div>-->
-                    <!--&lt;!&ndash; ./col &ndash;&gt;-->
-                    <!--</div>-->
-                </div>
-            </div>
-            <!-- /.box -->
-        </div>
         <div class="col-sm-6">
             <div class="box">
                 <div class="box-header">
@@ -120,6 +68,19 @@
                 <form role="form" id="booking-summary" class="form-horizontal" ng-submit="booking.createBooking()">
                     <div class="box-body">
                         <div class="form-group">
+                            <div class="col-sm-12">
+                                <ui-gmap-google-map pan="true"
+                                                    options='booking.map.options'
+                                                    center='booking.map.center'
+                                                    zoom='booking.map.zoom'
+                                                    bounds="booking.map.bounds"
+                                                    events="booking.map.events">
+                                    <ui-gmap-markers models="booking.markers" coords="'self'" icon="'icon'" fit="true">
+                                    </ui-gmap-markers>
+                                </ui-gmap-google-map>
+                            </div>
+                        </div>
+                        <div class="form-group">
                             <label for="originPoint" class="col-sm-3 control-label">Origin</label>
                             <div class="col-sm-9">
                                 <input ng-model="booking.form.origin.name" type="text" class="form-control" id="originPoint" placeholder="Departure Point" ng-required="true" ng-disabled="true">
@@ -147,7 +108,7 @@
                                     <div class="input-group-addon">
                                         <i class="fa fa-clock-o"></i>
                                     </div>
-                                    <input id="routeTime" data-toggle="dropdown" type="text" class="form-control pull-right active" ng-model="booking.input.time" ng-required="true" ng-disabled="true">
+                                    <input id="routeTime" data-toggle="dropdown" type="text" class="form-control pull-right active" ng-model="booking.form.schedule" ng-required="true" ng-disabled="true">
                                     <!--<input id="routeTime" data-toggle="dropdown" type="text" class="form-control pull-right active" ng-model="booking.form.schedule" ng-required="true">-->
                                     <!--<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">-->
                                         <!--<datetimepicker data-ng-model="booking.form.route.time"-->

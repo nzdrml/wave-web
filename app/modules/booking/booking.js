@@ -33,7 +33,8 @@ angular.module('booking', ['BookingService', 'RouteService', 'PointService', 'Us
             vm.form.destination = destPoint;
             vm.form.route = route;
             console.log(route);
-            vm.input.time = $filter('date')(route.time, 'hh:mm:ss a');
+            // vm.input.time = $filter('date')(route.time, 'hh:mm:ss a');
+            vm.form.schedule = $filter('date')(route.time, 'MMMM dd, yyyy hh:mm a');
             vm.setMarkerCoords(vm.markers[1], destPoint.coordinates);
         };
 

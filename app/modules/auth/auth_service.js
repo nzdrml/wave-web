@@ -1,7 +1,7 @@
 "use strict";
 
-angular.module("AuthService", [])
-    .service("Auth", function($q, $http, growl, Restangular){
+angular.module("AuthService", ['UserService'])
+    .service("Auth", function($q, $http, growl, Restangular, User){
         var self = this;
 
         self.requestToken = function () {
@@ -40,7 +40,6 @@ angular.module("AuthService", [])
                     return Restangular.all('login').post(credentials);
                 })
                 .then(function(user){
-                    console.log("zup", user);
                     $http.defaults.headers.common["X-Authorization"] = user.access_token;
 
                     self.setUser(user.plain());
@@ -63,7 +62,11 @@ angular.module("AuthService", [])
         };
 
         self.setUser = function(user){
-            return localStorage.setItem("user", JSON.stringify(user));
+            User.single(user.id)
+                .then(function(userData){
+                    return localStorage.setItem("user", JSON.stringify(_.extend(user, userData)));
+                });
+            // return localStorage.setItem("user", _.extend(JSON.stringify(user), ));
         };
 
         self.getUser = function(user){
