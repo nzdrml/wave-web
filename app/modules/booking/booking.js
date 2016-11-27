@@ -9,7 +9,7 @@ angular.module('booking', ['BookingService', 'RouteService', 'PointService', 'Us
                 controller: 'BookingCtrl as booking'
             });
     })
-    .controller('BookingCtrl', function($q, $scope, $filter, $state, $uibModal, uiGmapGoogleMapApi, growl, calendarConfig, moment, Booking, Route, Point) {
+    .controller('BookingCtrl', function($q, $scope, $filter, $state, $uibModal, uiGmapGoogleMapApi, growl, Booking, Route, Point) {
         var vm = this;
         
         vm.selected = "";
@@ -21,6 +21,8 @@ angular.module('booking', ['BookingService', 'RouteService', 'PointService', 'Us
             maxSize: 5,
             currentPage: 1
         };
+
+        vm.selectedDates = [];
 
         $q.join(Point.service.getList(), Route.service.getList(), function(points, routes){
             vm.points = points.plain();
@@ -106,19 +108,13 @@ angular.module('booking', ['BookingService', 'RouteService', 'PointService', 'Us
 
         });
 
-        vm.events = [
-            {
-                title: 'An event',
-                color: calendarConfig.colorTypes.warning,
-                startsAt: moment().startOf('week').subtract(2, 'days').add(8, 'hours').toDate(),
-                endsAt: moment().startOf('week').add(1, 'week').add(9, 'hours').toDate()
-            }
-        ];
-        vm.calendarView = 'month';
-        vm.viewDate = moment().startOf('month').toDate();
-
-        vm.timespanClicked = function(calendarDate, calendarCell ) {
-            console.log(calendarDate, calendarCell);
+        vm.mdtpicker = {
+            oneDaySelectionOnly: function(event, date){
+                console.log(event, date);
+                vm.selectedDates.length = 0;
+            },
+            disableDaysBefore: moment(),
+            disableDaysAfter: moment().add(3, 'months')
         };
 
         vm.open = function () {

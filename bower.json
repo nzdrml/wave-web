@@ -52,9 +52,7 @@
     "moment": "^2.14.1",
     "angular-bootstrap-datetimepicker": "^1.0.1",
     "jquery.easing": "jquery-easing-original#^1.4.1",
-    "interact": "^1.2.6",
-    "angular-touch": "^1.5.9",
-    "angular-bootstrap-calendar": "^0.27.1"
+    "angular-multiple-date-picker": "multiple-date-picker#^2.1.1"
   },
   "overrides": {
     "bootstrap": {
