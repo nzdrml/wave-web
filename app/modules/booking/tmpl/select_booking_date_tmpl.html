@@ -1,0 +1,33 @@
+<div class="nav-tabs-custom">
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active">
+            <a ng-click="toggleDatePicker('single')" href="#single" aria-controls="home" role="tab" data-toggle="tab">Single Date Select</a>
+        </li>
+        <li role="presentation">
+            <a ng-click="toggleDatePicker('multi')" href="#multi" aria-controls="profile" role="tab" data-toggle="tab">Multiple Date Select</a>
+        </li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="single">
+            <multiple-date-picker
+                    calendar-id="'myId2'"
+                    ng-model="selectedDates"
+                    disable-days-before="mdtpicker.disableDaysBefore"
+                    disable-days-after="mdtpicker.disableDaysAfter"
+                    disallow-back-past-months="true"
+                    day-click="mdtpicker.oneDaySelectionOnly">
+            </multiple-date-picker>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="multi">
+            <multiple-date-picker
+                    ng-model="selectedDates"
+                    disable-days-before="mdtpicker.disableDaysBefore"
+                    disable-days-after="mdtpicker.disableDaysAfter"
+                    disallow-back-past-months="true">
+            </multiple-date-picker>
+        </div>
+    </div>
+</div>

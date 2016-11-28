@@ -14,7 +14,8 @@ angular.module('ridewaveApp', [
         'ngSanitize',
         'ui.select',
         'angularUtils.directives.dirPagination',
-        'ui.bootstrap.datetimepicker'
+        'ui.bootstrap.datetimepicker',
+        'angularMoment'
     ])
     .constant("config", {
         "api": "http://localhost:8080",

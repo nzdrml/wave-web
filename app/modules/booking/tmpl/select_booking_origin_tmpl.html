@@ -1,0 +1,17 @@
+<div class="box">
+    <div class="box-header text-uppercase">
+        Board at
+    </div>
+    <!-- /.box-header -->
+    <div class="box-body">
+        <ui-select ng-model="origin" on-select="onSelected($item)">
+            <ui-select-match class="ui-select-match">
+                <span ng-bind="$select.selected.name"></span>
+            </ui-select-match>
+            <ui-select-choices class="ui-select-choices"
+                               repeat="point in (points | filter: $select.search) track by point.id">
+                <span ng-bind="point.name"></span>
+            </ui-select-choices>
+        </ui-select>
+    </div>
+</div>

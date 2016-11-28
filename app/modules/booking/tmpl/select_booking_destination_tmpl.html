@@ -1,0 +1,26 @@
+<div class="box" id="origin">
+    <div class="box-header text-uppercase">
+        Alight at
+    </div>
+    <!-- /.box-header -->
+    <div class="box-body table-responsive no-padding">
+        <table class="table table-hover">
+            <tbody>
+            <tr>
+                <th>Destination</th>
+                <th>Price</th>
+                <th>Time</th>
+            </tr>
+            <tr dir-paginate="route in destPoints | itemsPerPage: pagination.maxItems track by route.id"
+                ng-click="setDest(route)">
+                <td>{{ findPoint(route.destination_id).name }}</td>
+                <td>{{route.price | currency}}</td>
+                <td><span class="label label-success">{{route.time | amDateFormat : "hh:mm:ss a" }}</span></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="box-footer">
+        <dir-pagination-controls></dir-pagination-controls>
+    </div>
+</div>
