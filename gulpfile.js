@@ -33,7 +33,8 @@ var app = {
     "dist": {
         "path": "dist",
         "fonts": "dist/fonts",
-        "images": "dist/img"
+        "images": "dist/img",
+        "php": "dist/php"
     },
     "staticFiles": [
         "./app/css/AdminLTE.css",
@@ -41,7 +42,8 @@ var app = {
         "./app/js/adminlte.js",
         "./app/fonts/quicksand/*",
         "./app/.htaccess",
-        "./app/send.php"
+        "./app/send.php",
+        "php/**/*"
     ]
 };
 
@@ -128,7 +130,9 @@ gulp.task('images', function () {
 
 gulp.task('copyStaticFiles', function() {
     gulp.src(app.staticFiles, {base: './app'})
-        .pipe(gulp.dest(app.dist.path))
+        .pipe(gulp.dest(app.dist.path));
+    gulp.src(['./php/**/*'])
+        .pipe(gulp.dest(app.dist.php));
 });
 
 gulp.task('watch', ['css', 'fonts', 'images', 'htmlTemplates', 'wiredep'], function() {

@@ -2,3 +2,6 @@
 /node_modules
 /app/vendor
 /dist
+
+/app/index.html
+/app/js/templates.js
