@@ -45,6 +45,20 @@
                             <div class="form-group">
                                 <input ng-model="form.home.postal_code" ng-required="true" type="text" class="form-control" id="" placeholder="Postal Code">
                             </div>
+                            <div class="form-group">
+                                <div class="dropdown">
+                                    <a class="dropdown-toggle" id="home-time-dropdown" role="button" data-toggle="dropdown" data-target="#" href="#">
+                                        <div class="input-group">
+                                            <input type="text" name="date" class="form-control" data-ng-model="form.home.time">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                                        </div>
+                                    </a>
+                                    <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                                        <datetimepicker   data-ng-model="form.home.time"
+                                                          data-datetimepicker-config="{ modelType: 'HH:mm a', dropdownSelector: '#home-time-dropdown', startView: 'hour'  }"></datetimepicker>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -68,6 +82,20 @@
                             </div>
                             <div class="form-group">
                                 <input ng-model="form.work.postal_code" ng-required="true" type="text" class="form-control" id="" placeholder="Postal Code">
+                            </div>
+                            <div class="form-group">
+                                <div class="dropdown">
+                                    <a class="dropdown-toggle" id="work-time-dropdown" role="button" data-toggle="dropdown" data-target="#" href="#">
+                                        <div class="input-group">
+                                            <input type="text" name="date" class="form-control" data-ng-model="form.work.time">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                                        </div>
+                                    </a>
+                                    <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                                        <datetimepicker   data-ng-model="form.work.time"
+                                                          data-datetimepicker-config="{ modelType: 'HH:mm a', dropdownSelector: '#work-time-dropdown', startView: 'hour' }"></datetimepicker>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
