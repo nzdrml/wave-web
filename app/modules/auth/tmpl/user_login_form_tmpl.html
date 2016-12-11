@@ -1,0 +1,36 @@
+<div class="login-box-body">
+    <p class="login-box-msg">Sign in to start riding the wave</p>
+
+    <form ng-submit="login()">
+        <div class="form-group has-feedback">
+            <input ng-model="form.email" type="email" class="form-control" placeholder="Email">
+            <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+        </div>
+        <div class="form-group has-feedback">
+            <input ng-model="form.password" type="password" class="form-control" placeholder="Password">
+            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="remember-me-box">
+                    <input ng-model="form.rememberMe" id="remember-me" type="checkbox"> <label for="remember-me">Remember Me</label>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <button type="submit" class="btn btn-primary btn-block btn-flat" ng-disabled="auth.isSending">Login</button>
+            </div>
+        </div>
+    </form>
+
+    <div class="social-auth-links text-center">
+        <a href="#" class="btn btn-block btn-social btn-facebook btn-flat" ng-disabled="auth.isSending"><i class="fa fa-facebook"></i> Sign in using
+            Facebook</a>
+    </div>
+    <!-- /.social-auth-links -->
+
+    <!--<a href="#">I forgot my password</a><br>-->
+    <a href="register.html" class="text-center">Register</a>
+
+</div>

@@ -4,6 +4,12 @@ angular.module("AuthService", ['UserService'])
     .service("Auth", function($q, $http, growl, Restangular, User){
         var self = this;
 
+        self.isSending = false;
+
+        self.data = {
+          userRegistrationForm: {}
+        };
+
         self.requestToken = function () {
             var data = $.param({
                 client_id: "2d01f866507b7e8755be57d11da36d8493dcba57245c09321078d7b4d6d74198",
@@ -87,8 +93,7 @@ angular.module("AuthService", ['UserService'])
         self.register = function(formData){
             return self.requestToken()
                 .then(function(accessData){
-                    formData.user.company = "Company";
-                    return Restangular.all('users').post({user: formData.user}, null, {
+                    return Restangular.all('users').post({user: formData}, null, {
                         Authorization: "Bearer " + accessData
                     });
                 });
