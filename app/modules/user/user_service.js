@@ -1,18 +1,22 @@
 angular.module('UserService', [])
-    .factory('User', function(Restangular){
-        var usersUrlBase = "users";
-        var prefPointUrl = "set_preferred_point";
+    .service('User', function(Restangular){
+        var self = this;
 
-        return {
-            service: Restangular.service(usersUrlBase),
-            single: function(id) {
-                return Restangular.one(usersUrlBase, id).get();
-            },
-            setPrefPoint: function(userId, dataObj) {
-                return Restangular
-                    .one(usersUrlBase, userId)
-                    .all(prefPointUrl)
-                    .post(dataObj);
-            }
+        self.data = {};
+
+        self.usersUrlBase = "users";
+        self.prefPointUrl = "set_preferred_point";
+
+        self.service = Restangular.service(self.usersUrlBase);
+
+        self.single = function(id) {
+            return Restangular.one(self.usersUrlBase, id).get();
+        };
+
+        self.setPrefPoint = function(userId, dataObj) {
+            return Restangular
+                .one(self.usersUrlBase, userId)
+                .all(self.prefPointUrl)
+                .post(dataObj);
         };
     });

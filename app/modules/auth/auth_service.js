@@ -41,14 +41,14 @@ angular.module("AuthService", ['UserService'])
         };
 
         self.login = function (credentials) {
+            self.logout();
             return self.requestToken()
                 .then(function(){
                     return Restangular.all('login').post(credentials);
                 })
                 .then(function(user){
-                    $http.defaults.headers.common["X-Authorization"] = user.access_token;
-
                     self.setUser(user.plain());
+                    self.setHeaders();
 
                     return user;
                 });
@@ -70,13 +70,15 @@ angular.module("AuthService", ['UserService'])
         self.setUser = function(user){
             User.single(user.id)
                 .then(function(userData){
-                    return localStorage.setItem("user", JSON.stringify(_.extend(user, userData)));
+                    var userObj = _.extend(user, userData);
+                    User.data = userObj;
+                    localStorage.setItem("user", JSON.stringify(userObj));
                 });
             // return localStorage.setItem("user", _.extend(JSON.stringify(user), ));
         };
 
         self.getUser = function(user){
-            return JSON.parse(localStorage.getItem("user"));
+            return User.data;
         };
 
         self.isAuthenticated = function(){

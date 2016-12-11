@@ -11,8 +11,9 @@ angular.module('main', [])
                 templateUrl: 'modules/main/main.html',
                 controller: 'MainCtrl as main',
                 onEnter: function($state, Auth){
+
                     return Auth.isAuthenticated() ? Auth.setHeaders() : $state.go("login");
-                },
+                }
             });
     })
     .controller('MainCtrl', function($ocLazyLoad, $state, Auth){
@@ -20,12 +21,26 @@ angular.module('main', [])
         vm.user = Auth.getUser();
 
         vm.logout = function(){
-            Auth.logout();
-            $state.go("login");
+            $state.go("logout");
         };
 
         $ocLazyLoad.load('AdminModule', {
             rerun: true,
-            reconfig: true
+            reconfig: true,
+            cache: false
         });
-    });
+    })
+    .filter('padNum', function () {
+        return function (n, len) {
+            var num = parseInt(n, 10);
+            len = parseInt(len, 10);
+            if (isNaN(num) || isNaN(len)) {
+                return n;
+            }
+            num = ''+num;
+            while (num.length < len) {
+                num = '0'+num;
+            }
+            return num;
+        };
+    });;

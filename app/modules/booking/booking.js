@@ -7,6 +7,27 @@ angular.module('booking', ['BookingService', 'BookingDirective', 'RouteService',
                 url: '/bookings',
                 templateUrl: 'modules/booking/booking.html',
                 controller: 'BookingCtrl as booking'
+            })
+            .state('main.bookings.show', {
+                url: '/bookings/:id/show',
+                templateUrl: 'modules/booking/booking_show.html',
+                controller: 'BookingShowCtrl as booking',
+                resolve: {
+                    ticket: function($q, $stateParams, Auth, Booking, Route){
+                        Auth.setHeaders();
+                        return $q.join(Booking.find_by_id($stateParams.id), Route.service.getList(), function(booking, routes){
+                            booking.route = _.find(routes, ["id", booking.route_id]);
+                            return booking;
+                        });
+                    }
+                },
+                parent: 'main'
+            })
+            .state('main.bookings.success', {
+                url: '/bookings/success',
+                templateUrl: 'modules/booking/booking_success.html',
+                controller: 'BookingSuccessCtrl as booking',
+                parent: 'main'
             });
     })
     .controller('BookingCtrl', function($q, $scope, $filter, $state, $uibModal, uiGmapGoogleMapApi, growl, Booking, Route, Point) {
@@ -52,6 +73,44 @@ angular.module('booking', ['BookingService', 'BookingDirective', 'RouteService',
                 $log.info('Modal dismissed at: ' + new Date());
             });
         };
+    })
+    .controller('BookingSuccessCtrl', function($q, $scope, uiGmapGoogleMapApi, growl, Booking) {
+        var vm = this;
+
+        vm.booking = Booking;
+    })
+    .controller('BookingShowCtrl', function($q, $scope, uiGmapGoogleMapApi, growl, Booking, ticket) {
+        var vm = this;
+
+        vm.ticket = ticket;
+        vm.map = {
+            center: { latitude: 0, longitude: 0 },
+            zoom: 12,
+            options: {
+            },
+            bounds: {}
+        };
+        vm.markers = [
+            {
+                id: 0,
+                latitude: parseFloat(ticket.route.origin_coordinates.split(', ')[0]),
+                longitude: parseFloat(ticket.route.origin_coordinates.split(', ')[1]),
+                icon: "http://maps.google.com/mapfiles/kml/paddle/A.png"
+            },
+            {
+                id: 1,
+                latitude: parseFloat(ticket.route.destination_coordinates.split(', ')[0]),
+                longitude: parseFloat(ticket.route.destination_coordinates.split(', ')[1]),
+                icon: "http://maps.google.com/mapfiles/kml/paddle/B.png"
+            }
+        ];
+
+        console.log(ticket, vm.markers);
+
+        uiGmapGoogleMapApi.then(function(maps) {
+
+        });
+
     })
     .controller('BookingModalCtrl', function ($scope, $q, $uibModalInstance, $uibModal, growl, Auth, User, data) {
         var vm = this;

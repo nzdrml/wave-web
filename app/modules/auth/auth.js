@@ -25,6 +25,15 @@ angular.module("auth", ["AuthService", "AuthDirective", "AddressService", "home-
                 templateUrl: "modules/auth/login.html",
                 controller: "LoginCtrl as loginCtrl"
             })
+            .state("logout", {
+                url: "/logout",
+                templateUrl: "modules/auth/login.html",
+                controller: "LoginCtrl as loginCtrl",
+                onEnter: function($state, Auth){
+                    Auth.logout();
+                    return $state.go('login');
+                }
+            })
     })
     .controller("RegisterCtrl", function ($q, $scope, $state, $ocLazyLoad, Restangular, growl, Auth, Address) {
         var vm = this;

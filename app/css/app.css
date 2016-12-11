@@ -5481,3 +5481,6 @@ nav.navbar {
 
 #booking-summary .box-body {
   min-height: 400px; }
+
+#booking-show .angular-google-map-container {
+  height: 250px; }

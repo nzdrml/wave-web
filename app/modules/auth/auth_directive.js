@@ -86,7 +86,7 @@ angular.module('AuthDirective', [])
                             return $q.delay(500);
                         })
                         .then(function(){
-                            return $state.go("main.bookings");
+                            return $state.go("main.bookings", {}, {reload: true});
                         })
                         .catch(function (err) {
                             return growl.error("Login Failed");

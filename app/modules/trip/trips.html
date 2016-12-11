@@ -15,7 +15,7 @@
         <div class="col-sm-12">
             <div class="box">
                 <div class="box-header">
-                    <h3 class="box-title">Current</h3>
+                    <h3 class="box-title">Today</h3>
 
                     <div class="box-tools">
 
@@ -23,6 +23,57 @@
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body no-padding">
+                    <table class="table">
+                        <tbody><tr>
+                            <th style="width: 30px">Trip#</th>
+                            <th>Origin</th>
+                            <th>Destination</th>
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>Actions</th>
+                        </tr>
+                        <tr ng-repeat="booking in trip.bookings track by booking.id" ng-hide="booking.isOld || !booking.today">
+                            <td>{{booking.id}}</td>
+                            <td>{{booking.route.origin.name}}</td>
+                            <td>{{booking.route.destination.name}}</td>
+                            <td>{{booking.schedule | amDateFormat : "MMM dd, yyyy"}}</td>
+                            <td>{{booking.schedule | amDateFormat : "hh:mma"}}</td>
+                            <td><button class="btn btn-primary">View</button></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title">Upcoming</h3>
+
+                    <div class="box-tools">
+
+                    </div>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body no-padding">
+                    <table class="table">
+                        <tbody><tr>
+                            <th style="width: 30px">Trip#</th>
+                            <th>Origin</th>
+                            <th>Destination</th>
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>Actions</th>
+                        </tr>
+                        <tr ng-repeat="booking in trip.bookings track by booking.id" ng-hide="booking.isOld || booking.today">
+                            <td>{{booking.id}}</td>
+                            <td>{{booking.route.origin.name}}</td>
+                            <td>{{booking.route.destination.name}}</td>
+                            <td>{{booking.schedule | amDateFormat : "MMM dd, yyyy"}}</td>
+                            <td>{{booking.schedule | amDateFormat : "hh:mma"}}</td>
+                            <td><button class="btn btn-primary">View</button></td>
+                        </tr>
+                        </tbody>
+                    </table>
                 </div>
                 <!-- /.box-body -->
             </div>

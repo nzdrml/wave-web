@@ -95,13 +95,13 @@ angular.module('BookingDirective', [])
                             id: 0,
                             latitude: undefined,
                             longitude: undefined,
-                            icon: "img/Markers/3.png"
+                            icon: "http://maps.google.com/mapfiles/kml/paddle/A.png"
                         },
                         {
                             id: 1,
                             latitude: undefined,
                             longitude: undefined,
-                            icon: "img/Markers/2.png"
+                            icon: "http://maps.google.com/mapfiles/kml/paddle/B.png"
                         }
                     ];
 
@@ -123,6 +123,7 @@ angular.module('BookingDirective', [])
                         marker.latitude = splitCoords[0];
                         marker.longitude = splitCoords[1];
                     }
+                    console.log(marker);
                 };
 
                 scope.createBooking = function(){

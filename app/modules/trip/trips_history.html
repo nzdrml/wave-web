@@ -36,13 +36,19 @@
                             <th>Destination</th>
                             <th>Date</th>
                             <th>Time</th>
+                            <th>Actions</th>
                         </tr>
-                        <tr ng-repeat="booking in tripHis.bookings track by booking.id">
+                        <tr ng-repeat="booking in tripHis.bookings track by booking.id" ng-show="booking.isOld">
                             <td>{{booking.id}}</td>
                             <td>{{booking.route.origin.name}}</td>
                             <td>{{booking.route.destination.name}}</td>
-                            <td>{{booking.schedule | jsDate | date: "MMM dd, yyyy"}}</td>
-                            <td>{{booking.schedule | jsDate | date: "hh:mm a"}}</td>
+                            <td>{{booking.schedule | amDateFormat : "MMMM DD, YYYY"}}</td>
+                            <td>{{booking.schedule | amDateFormat : "hh:mma"}}</td>
+                            <td>
+                                <a ui-sref="main.bookings.show({id: booking.id})">
+                                    <button class="btn btn-primary">View</button>
+                                </a>
+                            </td>
                         </tr>
                         </tbody>
                     </table>

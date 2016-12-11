@@ -20,6 +20,10 @@ angular.module('BookingService', [])
                 return _.find(this.data.points, ["id", pointId]);
             },
 
+            find_route: function(routeId){
+                return _.find(this.data.routes, ["id", routeId]);
+            },
+
             set_origin: function(point) {
                 console.log(point);
                 this.data.form.origin = point;

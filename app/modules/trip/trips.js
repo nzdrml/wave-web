@@ -24,17 +24,18 @@ angular.module('trip', [])
             vm.bookings = bookings.plain();
 
             _.forEach(vm.bookings, function(booking){
+                // if( moment(booking.schedule) < moment() ) return;
+                var today = moment();
                 var route = _.find(vm.routes, ["id", booking.route_id]);
 
                 route.origin = _.find(vm.points, ["id", route.origin_id]);
                 route.destination = _.find(vm.points, ["id", route.destination_id]);
 
+                booking.isOld = moment(booking.schedule).isBefore(today);
+                booking.today = moment(booking.schedule).isBetween(moment().startOf('day'), moment().endOf('day'), 'day', [])
                 booking.route = route;
-
-                console.log(booking);
             });
         });
-
     })
     .controller('TripHistoryCtrl', function($q,$scope, $state, Restangular, growl, Booking, Route, Point) {
         var vm = this;
@@ -50,15 +51,10 @@ angular.module('trip', [])
                 route.origin = _.find(vm.points, ["id", route.origin_id]);
                 route.destination = _.find(vm.points, ["id", route.destination_id]);
 
+                booking.isOld = moment(booking.schedule) < moment() ? true : false;
                 booking.route = route;
 
-                console.log(booking);
             });
         });
 
-    })
-    .filter("jsDate", function () {
-        return function (x) {
-            return new Date(x);
-        };
     });
