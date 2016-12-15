@@ -1,5 +1,6 @@
 var gulp = require('gulp'),
     pngquant = require('imagemin-pngquant'),
+    del = require('del'),
     $ = require('gulp-load-plugins')();
 
 var app = {
@@ -7,12 +8,14 @@ var app = {
     "home": "app/",
     "index": "app/index.html",
     "scripts": {
-        "angularGlob": "app/modules/**/*.js"
+        "angularGlob": "app/modules/**/*.js",
+        "dist": "dist/js/*.js"
     },
     "css": {
         "sass": "app/css/scss/app.scss",
         "out": "app/css",
-        "glob": "app/css/scss/**/*.scss"
+        "glob": "app/css/scss/**/*.scss",
+        "dist": "dist/css/*.css"
     },
     "fonts": {
         "vendorGlob": "app/vendor/**/fonts/*.*",
@@ -47,13 +50,29 @@ var app = {
     ]
 };
 
-gulp.task('useref', ['wiredep'], function () {
+gulp.task('useref', ['cleanDist', 'wiredep'], function () {
+    var jsFilter = $.filter("**/*.js", { restore: true });
+    var cssFilter = $.filter("**/*.css", { restore: true });
+    var indexHtmlFilter = $.filter(['**/*', '!**/index.html'], { restore: true });
+
     return gulp.src(app.index)
         .pipe($.useref({searchPath: app.home}))
-        .pipe($.if('*.css', $.cleanCss()))
-        .pipe($.if('*.js', $.ngAnnotate()))
-        .pipe($.if('*.js', $.uglify()))
+        .pipe(jsFilter)
+        .pipe($.ngAnnotate())
+        .pipe($.uglify())
+        .pipe(jsFilter.restore)
+        .pipe(cssFilter)
+        .pipe($.cleanCss())
+        .pipe(cssFilter.restore)
+        .pipe(indexHtmlFilter)
+        .pipe($.rev())
+        .pipe(indexHtmlFilter.restore)
+        .pipe($.revReplace())
         .pipe(gulp.dest(app.dist.path));
+});
+
+gulp.task('cleanDist', function(){
+   return del([app.scripts.dist, app.css.dist]);
 });
 
 gulp.task('wiredep', function () {
